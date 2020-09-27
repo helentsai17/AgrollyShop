@@ -43,8 +43,8 @@ export default class UserLogin extends Component {
                     'Content-type': 'application/x-www-form-urlencoded'
                 }})
             .then(response => {
-                localStorage.setItem('usertoken', response.data)
-                console.log(response)
+                localStorage.setItem('usertoken', JSON.stringify(response.data))
+                console.log(response.data)
                 // window.location = "/farmer/cropSell"
             })
             .catch(err => {
@@ -77,7 +77,7 @@ export default class UserLogin extends Component {
                     </div>
 
                     <div className="form-group">
-                        <input type="submit" value="Apply"
+                        <input type="submit" value="login"
                             className="btn btn-primary" />
                     </div>
 
