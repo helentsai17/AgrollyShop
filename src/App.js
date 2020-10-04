@@ -5,10 +5,11 @@ import './App.css';
 
 import Navbar from "./components/navbar"
 import farmerLogin from "./components/farmer/farmer.login"
-import homePage from './components/homepage'
+import homePage from './components/homePage/homepage'
 import cropSell from './components/farmer/ShoppingPages/CropSell'
 import cropCreate from "./components/farmer/ShoppingPages/CreateSell"
 import farmerProfile from './components/farmer/FarmerProfile'
+import shopper from './components/shopper/Shopping'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Router >
       <Navbar/>
       <Route path ="/" exact component = {homePage} />
+      <Route path ="/shop" exact component = {shopper} />
       <Route path ="/farmer/login" exact component = {farmerLogin} />
       <Route path ="/farmer/cropSell" exact component = {cropSell} />
       <Route path ="/farmer/cropCreate" exact component = {cropCreate} />

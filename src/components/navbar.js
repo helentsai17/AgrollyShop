@@ -12,7 +12,11 @@ class Navbar extends Component {
 
     render() {
         const loginRegLink = (
-            <ul className="navbar-nav">
+            <ul className="navbar-nav"><li className="nav-item">
+                <Link to="/shop" className="nav-link">
+                    Shops
+                </Link>
+            </li>
                 <li className="nav-item">
                     <Link to="/farmer/login" className="nav-link">
                         Login

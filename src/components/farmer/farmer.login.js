@@ -45,7 +45,7 @@ export default class UserLogin extends Component {
             .then(response => {
                 localStorage.setItem('usertoken', JSON.stringify(response.data))
                 console.log(response.data)
-                // window.location = "/farmer/cropSell"
+                window.location = "/farmer/cropSell"
             })
             .catch(err => {
                 console.log(err)
