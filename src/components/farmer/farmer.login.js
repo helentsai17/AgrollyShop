@@ -83,6 +83,9 @@ export default class UserLogin extends Component {
 
                 </form>
 
+                <h5>don't have an account yet? click <a style ={{"color": "blue"}} href="/register">here</a> to register one</h5>
+                
+
             </div>
         );
     }

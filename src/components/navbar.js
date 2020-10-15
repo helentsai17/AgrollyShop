@@ -12,11 +12,24 @@ class Navbar extends Component {
 
     render() {
         const loginRegLink = (
-            <ul className="navbar-nav"><li className="nav-item">
-                <Link to="/shop" className="nav-link">
-                    Shops
+
+            <ul className="navbar-nav">
+                <li className="nav-item dropdown">
+                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        about
+                    </a>
+                    <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a className="dropdown-item" href="#">Technology</a>
+                        <a className="dropdown-item" href="#">media</a>
+                    </div>
+                </li>
+
+
+                <li className="nav-item">
+                    <Link to="/shop" className="nav-link">
+                        Shops
                 </Link>
-            </li>
+                </li>
                 <li className="nav-item">
                     <Link to="/farmer/login" className="nav-link">
                         Login

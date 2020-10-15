@@ -5,12 +5,13 @@ import './App.css';
 
 import Navbar from "./components/navbar"
 import farmerLogin from "./components/farmer/farmer.login"
-import homePage from './components/homePage/homepage'
+import register from "./components/farmer/register"
+import homePage from './components/homePage/homepageOld'
 import cropSell from './components/farmer/ShoppingPages/CropSell'
 import cropCreate from "./components/farmer/ShoppingPages/CreateSell"
 import farmerProfile from './components/farmer/FarmerProfile'
 import shopper from './components/shopper/Shopping'
-
+import OneTimePassword from './components/farmer/OneTimePassword'
 function App() {
   return (
     <div>
@@ -19,10 +20,12 @@ function App() {
       <Navbar/>
       <Route path ="/" exact component = {homePage} />
       <Route path ="/shop" exact component = {shopper} />
+      <Route path ="/register" exact component = {register} />
       <Route path ="/farmer/login" exact component = {farmerLogin} />
       <Route path ="/farmer/cropSell" exact component = {cropSell} />
       <Route path ="/farmer/cropCreate" exact component = {cropCreate} />
       <Route path ="/farmer/profile" exact component = {farmerProfile} />
+      <Route path ="/farmer/onetimepassword" exact component = {OneTimePassword} />
      
      
       </Router>
