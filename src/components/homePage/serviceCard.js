@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import style from './ServiceCard.module.css'
 import image from '../../Image/potato.png'
 

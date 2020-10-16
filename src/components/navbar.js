@@ -3,7 +3,6 @@ import { Link, withRouter } from "react-router-dom";
 
 class Navbar extends Component {
 
-
     logOut(e) {
         localStorage.removeItem('usertoken')
         this.props.history.push('/')

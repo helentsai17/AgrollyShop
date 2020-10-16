@@ -12,6 +12,7 @@ import cropCreate from "./components/farmer/ShoppingPages/CreateSell"
 import farmerProfile from './components/farmer/FarmerProfile'
 import shopper from './components/shopper/Shopping'
 import OneTimePassword from './components/farmer/OneTimePassword'
+
 function App() {
   return (
     <div>
@@ -26,7 +27,6 @@ function App() {
       <Route path ="/farmer/cropCreate" exact component = {cropCreate} />
       <Route path ="/farmer/profile" exact component = {farmerProfile} />
       <Route path ="/farmer/onetimepassword" exact component = {OneTimePassword} />
-     
      
       </Router>
     </div>

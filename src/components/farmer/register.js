@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component , useState } from 'react';
 import axios from 'axios';
 import Emailcheck from './OneTimePassword'
 
@@ -7,6 +7,7 @@ export default class Register extends Component {
 
     constructor(props) {
         super(props);
+        
 
         this.onChangeEmail = this.onChangeEmail.bind(this)
         this.onChangeName = this.onChangeName.bind(this)
@@ -24,6 +25,7 @@ export default class Register extends Component {
             userstate: "",
             usercity: "",
             states:[],
+            stateset:[],
             cities:[],
             onetimepassword:"",
         }
@@ -50,12 +52,14 @@ export default class Register extends Component {
         this.setState({
             usercountry: e.target.value
         });
+        
     }
 
     onChangeState(e) {
         this.setState({
             userstate: e.target.value
         });
+
     }
 
     onchangeCity(e) {
@@ -78,13 +82,26 @@ export default class Register extends Component {
             .catch((error)=>{
                 console.log("error come from resgister: "+ error)
             })
+           let stateone = this.state.states.map(allstate =>{
+               if(!allstate.State.trim().includes(this.state.stateset)===false){
+                    this.state.stateset.push(allstate.State)
+               }   
+           })
+            return stateone
+        }if(this.state.usercountry == "mongolia"){
 
         }
         
     }
 
     getCity(){
-//if country == bazil and state != null ->
+    //if country == bazil and state != null ->
+        const City = this.state.states.map((allcity)=>{
+            if(!allcity.City.trim().includes(this.state.cities)===false){
+                this.state.cities.push(allcity.City)
+            }
+        })
+        return City
     }
 
 
@@ -138,6 +155,7 @@ export default class Register extends Component {
 
     render() {
         return (
+            
             <div className="container" >
                 <form onSubmit={this.onSubmit} >
                     <div className="form-group">
@@ -160,7 +178,7 @@ export default class Register extends Component {
                             value={this.state.userpassword}
                             onChange={this.onChangePassword} />
                     </div>
-
+                    
                     <div className="input-group mb-3">
                         <select className="custom-select" id="inputGroupSelect02"  value={this.state.usercountry} onChange={this.onChangeCountry}>
                             <option selected>Choose...</option>
@@ -172,18 +190,19 @@ export default class Register extends Component {
                             <label className="input-group-text" htmlFor="inputGroupSelect02">Country</label>
                         </div>
                     </div>
-                   
-                    {/* {this.getState}
-                    <div class="input-group mb-3">
-                        <select class="custom-select" id="inputGroupSelect02" value={this.state.userstate} onChange={this.onChangeState}>
-                            <option selected>Choose...</option>
-                            
-                        </select>
-                        <div class="input-group-append">
-                            <label class="input-group-text" htmlFor="inputGroupSelect02">City</label>
-                        </div>
-                    </div>  */}
 
+                    {this.getState()}
+                    
+                    <div className="input-group mb-3">
+                        <select className="custom-select" id="inputGroupSelect03" value={this.state.userstate} onChange={this.onChangeState}>
+                            <option selected>Choose...</option>
+                             {this.state.stateset.map((allstate)=>{ return <option value={allstate}>{allstate}</option>})}
+                        </select>
+                        <div className="input-group-append">
+                            <label className="input-group-text" htmlFor="inputGroupSelect03">State</label>
+                        </div>
+                    </div> 
+                    {this.getCity()}
                     
                     <div className="form-group">
                         <input type="text" className="form-control"
@@ -192,13 +211,13 @@ export default class Register extends Component {
                             onChange={this.onChangeState} />
                     </div>
 
-                    <div class="input-group mb-3">
-                        <select class="custom-select" id="inputGroupSelect02" value={this.state.usercity} onChange={this.onchangeCity}>
+                    <div className="input-group mb-3">
+                        <select className="custom-select" id="inputGroupSelect04" value={this.state.usercity} onChange={this.onchangeCity}>
                             <option selected>Choose...</option>
-                            <option value="Marechal Cândido Rondon">Marechal Cândido Rondon</option>
+                            {this.state.cities.map((allstate)=>{ return <option value={allstate}>{allstate}</option>})}
                         </select>
-                        <div class="input-group-append">
-                            <label class="input-group-text" htmlFor="inputGroupSelect02">City</label>
+                        <div className="input-group-append">
+                            <label className="input-group-text" htmlFor="inputGroupSelect04">City</label>
                         </div>
                     </div>
 
