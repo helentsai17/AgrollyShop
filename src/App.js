@@ -27,7 +27,7 @@ function App() {
       <Route path ="/register" exact component = {register} />
       <Route path ="/farmer/login" exact component = {farmerLogin} />
       <Route path ="/farmer/forgetpassword" exact component = {forgetPassword} />
-      <Route path ="/farmer/resetpasswrd" component = {resetPassword}/>
+      <Route path ="/farmer/resetpassword" component = {resetPassword}/>
 
       <Route path ="/farmer/cropSell" exact component = {cropSell} />
       <Route path ="/farmer/cropCreate" exact component = {cropCreate} />

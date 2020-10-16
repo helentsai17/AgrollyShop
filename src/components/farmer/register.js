@@ -1,11 +1,13 @@
 import React, { Component , useState } from 'react';
 import axios from 'axios';
-import { fireEvent } from '@testing-library/react';
 import style from './register.module.css';
 import backgroundImage from '../../Image/background/register.png'
 import logo from '../../Image/Agrolly/Agrolly logo.png'
 
+import stateData from '../../components/statesData'
+
 export default class Register extends Component {
+
 
     constructor(props) {
         super(props);
@@ -29,6 +31,7 @@ export default class Register extends Component {
             stateset:[],
             cities:[],
             onetimepassword:"",
+            AllState:[]
         }
     }
 
@@ -53,14 +56,15 @@ export default class Register extends Component {
         this.setState({
             usercountry: e.target.value
         });
-        this.getState()
+        {this.getState()}
     }
 
     onChangeState(e) {
         this.setState({
             userstate: e.target.value
         });
-        this.getCity()
+        {this.getCity()}
+        
     }
 
     onchangeCity(e) {
@@ -73,7 +77,8 @@ export default class Register extends Component {
 
 
     getState() {
-        if(this.state.usercountry == "brazil"){
+        const StateData = {stateData}
+        if(this.state.usercountry === "brazil"){
             axios.get("http://agrolly.tech/get_cities.php")
             .then(response=>{
                 // console.log(response.data)
@@ -83,14 +88,26 @@ export default class Register extends Component {
             .catch((error)=>{
                 console.log("error come from resgister: "+ error)
             })
-           let stateone = this.state.states.map(allstate =>{
-               if(!allstate.State.trim().includes(this.state.stateset)===false){
-                    this.state.stateset.push(allstate.State)
-               }   
-           })
-            return stateone
-        }if(this.state.usercountry == "mongolia"){
+            
+            
+            const brazilset = StateData.stateData.Brazil
+            this.setState({stateset : brazilset})
 
+        //    let stateone = this.state.states.map(allstate =>{
+        //        if(!allstate.State.trim().includes(this.state.stateset)===false){
+        //             this.state.stateset.push(allstate.State)
+        //        }   
+        //    })
+           
+        //    return stateone
+
+        }if(this.state.usercountry === "mongolia"){
+            const Mongoliaset = StateData.stateData.Mongolia
+            this.setState({stateset : Mongoliaset})
+            
+        }else if(this.state.usercountry === "USA"){
+            const USAset = StateData.stateData.USA
+            this.setState({stateset : USAset})
         }
         
     }
@@ -151,9 +168,6 @@ export default class Register extends Component {
             
     }
 
-
-
-
     render() {
         return (
             
@@ -184,7 +198,7 @@ export default class Register extends Component {
                     </div>
                     
                     <div className="input-group mb-3">
-                        <select className="custom-select" id="inputGroupSelect02"  value={this.state.usercountry} onChange={this.onChangeCountry}>
+                        <select className="custom-select" id="inputGroupSelect02"  value={this.state.usercountry} onChange={this.onChangeCountry}  >
                             <option selected>Choose...</option>
                             <option value="brazil">Brazil</option>
                             <option value="mongolia">Mongolia</option>
@@ -195,11 +209,11 @@ export default class Register extends Component {
                         </div>
                     </div>
 
-                    {this.getState()}
-                    {this.getCity}
+                   {/* {this.setState}
+                    {this.getCity} */}
                     
                     <div className="input-group mb-3">
-                        <select className="custom-select" id="inputGroupSelect03" value={this.state.userstate} onChange={this.onChangeState}>
+                        <select className="custom-select" id="inputGroupSelect03" value={this.state.userstate} onChange={this.onChangeState} >
                             <option selected>Choose...</option>
                              {this.state.stateset.map((allstate)=>{ return <option value={allstate}>{allstate}</option>})}
                         </select>

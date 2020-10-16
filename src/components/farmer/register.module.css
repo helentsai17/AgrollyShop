@@ -39,3 +39,8 @@ body, html {
     height:'100vh';
     
 }
+
+.ProfileCard{
+    margin: 3% auto;
+    max-width: 50%;
+}

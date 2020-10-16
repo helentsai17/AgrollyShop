@@ -31,7 +31,7 @@ export default class resetPassword extends Component {
     onSubmit(e) {
         e.preventDefault();
         console.log(this.state.enterpassword)
-
+        
         if(this.state.enterpassword == this.state.onetimepassword){
             const resetpasswordsend = {
                 useremail: this.state.useremail,

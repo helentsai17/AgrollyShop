@@ -33,21 +33,29 @@ export default class forgetPassword extends Component {
 
     onSubmit(e) {
         e.preventDefault();
+        var val = Math.floor(1000 + Math.random() * 9000);
+        console.log(val);
+
+        const mailcheck = {
+            useremail: this.state.useremail,
+            onetimepassword: val
+        }
 
         const reset = {
             useremail: this.state.useremail,
             userpassword: this.state.userpassword,
+            onetimepassword: val
         }
 
         axios
-            .post('http://agrolly.tech/mail.php', reset, {
+            .post('http://agrolly.tech/mail.php', mailcheck, {
                 headers: {
                     'Content-type': 'application/x-www-form-urlencoded'
                 }})
             .then(response => {
                 console.log(response.data)
                 this.props.history.push({
-                    pathname: '/farmer/passwordreset',
+                    pathname: '/farmer/resetpassword',
                     state: { detail: reset }
                   })
             })
