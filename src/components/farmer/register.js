@@ -1,14 +1,15 @@
 import React, { Component , useState } from 'react';
 import axios from 'axios';
-import Emailcheck from './OneTimePassword'
-
+import { fireEvent } from '@testing-library/react';
+import style from './register.module.css';
+import backgroundImage from '../../Image/background/register.png'
+import logo from '../../Image/Agrolly/Agrolly logo.png'
 
 export default class Register extends Component {
 
     constructor(props) {
         super(props);
-        
-
+  
         this.onChangeEmail = this.onChangeEmail.bind(this)
         this.onChangeName = this.onChangeName.bind(this)
         this.onChangePassword = this.onChangePassword.bind(this)
@@ -52,14 +53,14 @@ export default class Register extends Component {
         this.setState({
             usercountry: e.target.value
         });
-        
+        this.getState()
     }
 
     onChangeState(e) {
         this.setState({
             userstate: e.target.value
         });
-
+        this.getCity()
     }
 
     onchangeCity(e) {
@@ -97,7 +98,7 @@ export default class Register extends Component {
     getCity(){
     //if country == bazil and state != null ->
         const City = this.state.states.map((allcity)=>{
-            if(!allcity.City.trim().includes(this.state.cities)===false){
+            if(allcity.State == this.state.userstate){
                 this.state.cities.push(allcity.City)
             }
         })
@@ -156,7 +157,10 @@ export default class Register extends Component {
     render() {
         return (
             
-            <div className="container" >
+            <div styles={{ backgroundImage:`url(${backgroundImage})` }} >
+                <div className={style.backgroundRegister}>
+                <div className={style.formcontainer}>
+                <img style = {{"width":"40%", "marginBottom":"10px"}} src={logo} alt="logo"/>
                 <form onSubmit={this.onSubmit} >
                     <div className="form-group">
                         <input type="text" className="form-control"
@@ -192,6 +196,7 @@ export default class Register extends Component {
                     </div>
 
                     {this.getState()}
+                    {this.getCity}
                     
                     <div className="input-group mb-3">
                         <select className="custom-select" id="inputGroupSelect03" value={this.state.userstate} onChange={this.onChangeState}>
@@ -202,14 +207,7 @@ export default class Register extends Component {
                             <label className="input-group-text" htmlFor="inputGroupSelect03">State</label>
                         </div>
                     </div> 
-                    {this.getCity()}
                     
-                    <div className="form-group">
-                        <input type="text" className="form-control"
-                            placeholder="the state you are in"
-                            value={this.state.userstate}
-                            onChange={this.onChangeState} />
-                    </div>
 
                     <div className="input-group mb-3">
                         <select className="custom-select" id="inputGroupSelect04" value={this.state.usercity} onChange={this.onchangeCity}>
@@ -229,8 +227,8 @@ export default class Register extends Component {
                 </form>
 
                 
-                
-
+                </div>
+                </div>
             </div>
         );
     }

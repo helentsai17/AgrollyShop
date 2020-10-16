@@ -1,0 +1,41 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.backgroundRegister{
+    background-image: url(../../Image/background/register.png);
+    height: 100%;
+    margin: 0;
+    padding: 5%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: '100vw';
+    height:'100vh';
+}
+
+.formcontainer{
+   max-width: 50%;
+   margin: 3% auto;
+   padding: 4%;
+   border-style: solid;
+   border-radius: 25px;
+   border-color: rgb(160,160,160,0.6);
+   background-color: rgb(160,160,160,0.6);
+   text-align: center;
+}
+
+.backgroundLogin{
+    /* https://images.unsplash.com/photo-1593978223173-be016727e3f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80 */
+    background-image: url(../../Image/background/wheat.jpeg);
+    height: 100%;
+    margin: 0;
+    padding: 5%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: '100vw';
+    height:'100vh';
+    
+}

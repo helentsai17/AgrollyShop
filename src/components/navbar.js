@@ -18,7 +18,7 @@ class Navbar extends Component {
                         about
                     </a>
                     <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a className="dropdown-item" href="#">Technology</a>
+                        <a className="dropdown-item" href="/about/technology">Technology</a>
                         <a className="dropdown-item" href="#">media</a>
                     </div>
                 </li>

@@ -1,0 +1,128 @@
+#title{
+    background: rgba(0, 0, 0, 0.3) ;
+}
+
+figure{
+    width:100%; 
+    height: 300px;
+   overflow:hidden; 
+   margin:0;   
+   background: rgba(0, 0, 0, 0.3) ;
+}
+
+.title-image{
+    width: 100%;
+}
+
+
+#wheatherF{
+    background-color: #012A63;
+    color: aliceblue;
+    padding: 3%;
+}
+
+.wheather-phone{
+   width: 330px;
+   /* padding-left: 15%; */
+   /* text-align: center; */
+}
+
+.weather-image{
+    height: 100px;
+}
+
+.wheather-text{
+    padding-right: 10%;
+    padding-top: 1%;
+}
+
+.wheather-text button{
+    text-align: end;
+}
+
+
+/* suggestion part */
+
+#suggestion{
+    background-color:#1B1B1B ;
+    padding: 3%;
+}
+
+.suggest-phone{
+    width: 330px;
+}
+
+.crop-image{
+    text-align: center;
+}
+
+.featurebtn{
+    padding-right: 10%;
+    color: white;
+}
+
+.stepbtn{
+    border-bottom: 4px solid white;
+}
+
+.btn-link{
+    color: white;
+}
+
+.step-img{
+    width: 230px;
+    float: left;
+    margin-right: 10px;
+    padding: 1%;
+}
+
+
+
+/* structure area */
+#structure{
+    background-color:#012A63 ;
+    padding: 3%;
+    
+}
+
+.structure-imge{ 
+ width: 100%;
+}
+
+.structure-text{
+  padding-top: 5%;
+  padding-right: 8%;
+}
+
+ol li{
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+
+.structure-imge:hover{
+    width: 105%;
+}
+
+/* available-time */
+
+#availabletime{
+    background-color:#1B1B1B ;
+    padding: 3%;
+}
+
+.ava-btn{
+    padding: 1%;
+    border: none;
+    border-radius: 5px;
+    width: 30%;
+    margin-right: 10px;
+}
+
+
+.ava-text{
+    color: white;
+    padding-top: 5%;
+    padding-right: 10%;
+    font-size: 18px;
+}

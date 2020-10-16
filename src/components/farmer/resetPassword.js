@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import Register from './register';
 
 
-export default class OneTimePassword extends Component {
+
+export default class resetPassword extends Component {
 
     constructor(props) {
         super(props);
@@ -15,18 +15,12 @@ export default class OneTimePassword extends Component {
 
         this.state = {
             useremail: state.useremail,
-            username: state.username,
             userpassword: state.userpassword,
-            usercountry: state.usercountry,
-            userstate: state.userstate,
-            usercity: state.usercity,
             onetimepassword: state.onetimepassword,
             enterpassword: ""
         }
 
     }
-
-
 
     onChangeOneTime(e) {
         this.setState({
@@ -39,16 +33,12 @@ export default class OneTimePassword extends Component {
         console.log(this.state.enterpassword)
 
         if(this.state.enterpassword == this.state.onetimepassword){
-            const userRegister = {
+            const resetpasswordsend = {
                 useremail: this.state.useremail,
-                username: this.state.username,
                 userpassword: this.state.userpassword,
-                usercountry: this.state.usercountry,
-                userstate: this.state.userstate,
-                usercity: this.state.usercity,
             }
             axios
-                .post('http://agrolly.tech/register.php', userRegister, {
+                .post('http://agrolly.tech/forgotpassword.php', resetpasswordsend, {
                     headers: {
                         'Content-type': 'application/x-www-form-urlencoded'
                     }
@@ -62,8 +52,8 @@ export default class OneTimePassword extends Component {
                 })
     
         }else{
-            console.log("register fail")
-            window.location = "/register"
+            console.log("password reset fail")
+            window.location = "/farmer/forgetpassword"
         }
         
 
@@ -73,7 +63,7 @@ export default class OneTimePassword extends Component {
 
 
     render() {
-        // const { data } = this.props.location
+        
         return (
 
             <div className="container" >
