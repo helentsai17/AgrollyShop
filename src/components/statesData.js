@@ -1,5 +1,5 @@
 const list = {
-    Brazil : [
+    Brazil: [
         'Acre (AC)',
         'Alagoas (AL)',
         'Amapá (AP)',
@@ -28,7 +28,7 @@ const list = {
         'Sergipe (SE)',
         'Tocantins (TO)',
     ],
-    Mongolia : [
+    Mongolia: [
         'Arkhangai',
         'Arhangay',
         'Bayan-Olgii',
@@ -55,7 +55,7 @@ const list = {
         'Zavkhan',
         'Ulaanbaatar (Municipality)',
     ],
-    USA : [
+    USA: [
         'Alabama',
         'Alaska',
         'Arizona',
@@ -107,7 +107,7 @@ const list = {
         'Wisconsin',
         'Wyoming'
     ],
-    Taiwan : [
+    Taiwan: [
         'Taipei',
         'Keelung',
         'Taoyuan',
@@ -130,6 +130,6 @@ const list = {
         'Kinmen',
         'Lienchiang',
     ]
-    };
+};
 
-    export default list;
+export default list;
