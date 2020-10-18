@@ -53,10 +53,11 @@ export default class Register extends Component {
     }
 
     onChangeCountry(e) {
+        // {this.getState()}
         this.setState({
             usercountry: e.target.value
         });
-        {this.getState()}
+       
     }
 
     onChangeState(e) {
@@ -79,29 +80,22 @@ export default class Register extends Component {
     getState() {
         const StateData = {stateData}
         if(this.state.usercountry === "brazil"){
-            axios.get("http://agrolly.tech/get_cities.php")
-            .then(response=>{
-                // console.log(response.data)
-                const states = response.data;
-                this.setState({ states: states });
-            })
-            .catch((error)=>{
-                console.log("error come from resgister: "+ error)
-            })
+            // axios.get("http://agrolly.tech/get_cities.php")
+            // .then(response=>{
+            //     // console.log(response.data)
+            //     const states = response.data;
+            //     this.setState({ states: states });
+            // })
+            // .catch((error)=>{
+            //     console.log("error come from resgister: "+ error)
+            // })
             
             
             const brazilset = StateData.stateData.Brazil
             this.setState({stateset : brazilset})
+            console.log(brazilset)
 
-        //    let stateone = this.state.states.map(allstate =>{
-        //        if(!allstate.State.trim().includes(this.state.stateset)===false){
-        //             this.state.stateset.push(allstate.State)
-        //        }   
-        //    })
-           
-        //    return stateone
-
-        }if(this.state.usercountry === "mongolia"){
+        }else if(this.state.usercountry === "mongolia"){
             const Mongoliaset = StateData.stateData.Mongolia
             this.setState({stateset : Mongoliaset})
             
@@ -113,7 +107,7 @@ export default class Register extends Component {
     }
 
     getCity(){
-    //if country == bazil and state != null ->
+        if(this.state.usercountry === "brazil"){
         const City = this.state.states.map((allcity)=>{
             if(allcity.State == this.state.userstate){
                 this.state.cities.push(allcity.City)
@@ -121,9 +115,11 @@ export default class Register extends Component {
         })
         return City
     }
+    }
 
-
-
+    componentDidUpdate(prevProps, prevState) {
+        // {this.getState}
+    }
 
     onSubmit(e) {
         e.preventDefault();
@@ -199,8 +195,8 @@ export default class Register extends Component {
                     
                     <div className="input-group mb-3">
                         <select className="custom-select" id="inputGroupSelect02"  value={this.state.usercountry} onChange={this.onChangeCountry}  >
-                            <option selected>Choose...</option>
-                            <option value="brazil">Brazil</option>
+                            <option >Choose...</option>
+                            <option selected value="brazil">Brazil</option>
                             <option value="mongolia">Mongolia</option>
                             <option value="USA">United State</option>
                         </select>

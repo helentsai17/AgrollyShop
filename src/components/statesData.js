@@ -129,8 +129,7 @@ const list = {
         'Penghu',
         'Kinmen',
         'Lienchiang',
-    ],
-
+    ]
     };
 
     export default list;
