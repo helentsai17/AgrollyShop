@@ -44,3 +44,13 @@ body, html {
     margin: 3% auto;
     max-width: 50%;
 }
+
+.ProfileNameText{
+    font-size: 35px;
+    /* margin-bottom: 50px; */
+}
+
+.aTagEdit{
+    margin-left: 50%;
+    color: blue;
+}

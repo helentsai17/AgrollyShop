@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import jwt_decode from 'jwt-decode'
 import style from '../farmer/register.module.css';
 
 export default class FarmerProfile extends Component {
@@ -33,7 +32,7 @@ export default class FarmerProfile extends Component {
         return (
             <div>
                 <div className = {style.ProfileCard}>
-                    <h1>Your Profile</h1>
+                    <span className ={style.ProfileNameText}>Your Profile</span> <a href='/farmer/profileEdit' className = {style.aTagEdit}> edit</a>
                     <h3>{this.state.name}</h3>
                     <hr />
                     <h5>Account Email</h5>
@@ -47,6 +46,7 @@ export default class FarmerProfile extends Component {
                     <hr />
                     <h5>City</h5>
                     <p>{this.state.city} </p>
+                    
                 </div>
             </div>
         )

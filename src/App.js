@@ -15,6 +15,7 @@ import OneTimePassword from './components/farmer/OneTimePassword'
 import technology from './components/aboutPage/technology'
 import forgetPassword from './components/farmer/forgetPassword'
 import resetPassword from './components/farmer/resetPassword'
+import profileEdit from './components/farmer/editProfile'
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
       <Route path ="/farmer/login" exact component = {farmerLogin} />
       <Route path ="/farmer/forgetpassword" exact component = {forgetPassword} />
       <Route path ="/farmer/resetpassword" component = {resetPassword}/>
+      <Route path ="/farmer/profileEdit" component = {profileEdit}/>
 
       <Route path ="/farmer/cropSell" exact component = {cropSell} />
       <Route path ="/farmer/cropCreate" exact component = {cropCreate} />

@@ -106,7 +106,31 @@ const list = {
         'West Virginia',
         'Wisconsin',
         'Wyoming'
-    ]
+    ],
+    Taiwan : [
+        'Taipei',
+        'Keelung',
+        'Taoyuan',
+        'Hsinchu',
+        'Milaoli',
+        'Taichung',
+        'Changhua',
+        'Yunlin',
+        'Chiayi',
+        'Tainan',
+        'Kaohsiung',
+        'Pingtung',
+        'Taitung',
+        'Nantou',
+        'Hualien',
+        'Yilan',
+        'Lutao',
+        'Lanyu',
+        'Penghu',
+        'Kinmen',
+        'Lienchiang',
+    ],
+
     };
 
     export default list;

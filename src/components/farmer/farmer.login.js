@@ -46,6 +46,7 @@ export default class UserLogin extends Component {
                 }})
             .then(response => {
                 localStorage.setItem('usertoken', JSON.stringify(response.data))
+                localStorage.setItem('passwordtoken', JSON.stringify(this.state.userpassword))
                 console.log(response.data)
                 window.location = "/farmer/cropSell"
             })
