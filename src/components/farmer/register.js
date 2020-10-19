@@ -7,6 +7,9 @@ import logo from '../../Image/Agrolly/Agrolly logo.png'
 import stateData from '../../components/statesData'
 import MongoliaCityData from '../../components/MongoliaCityData'
 
+import Alert from '../layout/alerts'
+import Dialog from '../layout/Dialog'
+
 export default class Register extends Component {
 
 
@@ -32,8 +35,11 @@ export default class Register extends Component {
             stateset: [],
             cities: [],
             onetimepassword: "",
-            AllState: [],
-            Brazilcities:[]
+            // AllState: [],
+            Brazilcities: [],
+            checked: false,
+            errorMessage: "",
+            isOpen:false
         }
     }
 
@@ -65,8 +71,6 @@ export default class Register extends Component {
         this.setState({
             userstate: e.target.value
         });
-        // {this.getCity()}
-
     }
 
     onchangeCity(e) {
@@ -74,6 +78,14 @@ export default class Register extends Component {
             usercity: e.target.value
         });
     }
+
+    handleChange = (e) => {
+        const { checked } = e.target
+        this.setState({
+            checked: checked
+        })
+    }
+
 
 
     getState() {
@@ -93,7 +105,7 @@ export default class Register extends Component {
             const brazilset = StateData.stateData.Brazil
             if (this.state.stateset !== brazilset) {
                 this.setState({ stateset: brazilset })
-                {this.getBrazilCity()}
+                { this.getBrazilCity() }
             }
 
 
@@ -120,12 +132,12 @@ export default class Register extends Component {
 
     }
 
-    getBrazilCity(){
+    getBrazilCity() {
         this.state.states.map((allcity) => {
             if (allcity.State === "Parana") {
-                if(!this.state.Brazilcities.includes(allcity.City)){
-                this.state.Brazilcities.push(allcity.City)
-            }
+                if (!this.state.Brazilcities.includes(allcity.City)) {
+                    this.state.Brazilcities.push(allcity.City)
+                }
             }
         })
     }
@@ -134,14 +146,14 @@ export default class Register extends Component {
 
         if (this.state.usercountry === "brazil") {
             if (this.state.userstate == "Parana") {
-                {this.getBrazilCity()}
+                { this.getBrazilCity() }
                 const BrazilCity = this.state.Brazilcities
                 // console.log(BrazilCity);
                 if (this.state.cities !== BrazilCity) {
                     this.setState({ cities: BrazilCity })
                     console.log(BrazilCity);
                 }
-               
+
             }
 
         } else if (this.state.usercountry === "mongolia") {
@@ -175,47 +187,60 @@ export default class Register extends Component {
     onSubmit(e) {
         e.preventDefault();
 
-        var val = Math.floor(1000 + Math.random() * 9000);
-        console.log(val);
-        const userRegister = {
-            useremail: this.state.useremail,
-            userpassword: this.state.userpassword,
-            username: this.state.username,
-            usercountry: this.state.usercountry,
-            userstate: this.state.userstate,
-            usercity: this.state.usercity,
-            onetimepassword: val
-        }
+        if (this.state.checked === true) {
+            var val = Math.floor(1000 + Math.random() * 9000);
+            console.log(val);
+            const userRegister = {
+                useremail: this.state.useremail,
+                userpassword: this.state.userpassword,
+                username: this.state.username,
+                usercountry: this.state.usercountry,
+                userstate: this.state.userstate,
+                usercity: this.state.usercity,
+                onetimepassword: val
+            }
 
-        const mailcheck = {
-            useremail: this.state.useremail,
-            onetimepassword: val
-        }
-        console.log(mailcheck)
+            const mailcheck = {
+                useremail: this.state.useremail,
+                onetimepassword: val
+            }
+            console.log(mailcheck)
 
 
-        axios
-            .post('http://agrolly.tech/mail.php', mailcheck, {
-                headers: {
-                    'Content-type': 'application/x-www-form-urlencoded'
-                }
-            })
-            .then(response => {
-                console.log(response.data)
-                this.props.history.push({
-                    pathname: '/farmer/onetimepassword',
-                    state: { detail: userRegister }
+            axios
+                .post('http://agrolly.tech/mail.php', mailcheck, {
+                    headers: {
+                        'Content-type': 'application/x-www-form-urlencoded'
+                    }
+                })
+                .then(response => {
+                    if(response.data.result === "successful" ){
+                        console.log(response.data)
+                        this.props.history.push({
+                            pathname: '/farmer/onetimepassword',
+                            state: { detail: userRegister }
+                        })
+                    }else{
+                        this.setState({ errorMessage: "register fail, please try again" })
+                    }
+                    
+                })
+                .catch(err => {
+                    console.log(err)
                 })
 
-            })
-            .catch(err => {
-                console.log(err)
-            })
 
-
+        } else {
+            this.setState({ errorMessage: "place agree with the agreement to move on and register" })
+            console.log("place agree with the agreement to move on and register")
+        }
     }
 
+
+
     render() {
+        const message = this.state.errorMessage
+        const alert = <Alert message={message} />
         return (
 
             <div styles={{ backgroundImage: `url(${backgroundImage})` }} >
@@ -274,12 +299,24 @@ export default class Register extends Component {
                             <div className="input-group mb-3">
                                 <select className="custom-select" id="inputGroupSelect04" value={this.state.usercity} onChange={this.onchangeCity}>
                                     <option selected>Choose...</option>
-                                    {this.state.cities.map((allstate) => { return <option value={allstate}>{allstate}</option> })}
+                                    {this.state.cities.map((allcity) => { return <option value={allcity}>{allcity}</option> })}
                                 </select>
                                 <div className="input-group-append">
                                     <label className="input-group-text" htmlFor="inputGroupSelect04">City</label>
                                 </div>
                             </div>
+                            
+
+                            
+                            <input type="checkbox" onChange={e => this.handleChange(e)} defaultChecked={this.state.checked} name="checkbox1" />
+                            <label htmlFor="checkbox1">click<button className = {style.infoButton} onClick={(e)=> this.setState({isOpen:true})}>here</button>to read the agreement</label>
+
+                            <Dialog isOpen={this.state.isOpen} onClose={(e)=> this.setState({isOpen:false})}>
+                                <p>1.	I accept Agrolly’s Terms and Conditions <br/>
+                                 2.	All information on this app or on Agrolly’ s website site is provided "as is", with no guarantee of completeness, accuracy, timeliness or of the results obtained from the use of this information. You assume full responsibility for your use of the information, and understand and agree that Agrolly is neither responsible, nor liable, to you in any manner whatsoever for any decision made or action or non-action taken by you in reliance upon the information provided through this app or web site.</p>
+                            </Dialog>
+                            
+                            <div>{alert}</div>
 
                             <div className="form-group">
                                 <input type="submit" value="register"

@@ -54,3 +54,9 @@ body, html {
     margin-left: 50%;
     color: blue;
 }
+
+.infoButton{
+ border: none;
+ background-color: Transparent;
+ color: blue;
+}
