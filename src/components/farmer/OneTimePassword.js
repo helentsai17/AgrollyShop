@@ -26,8 +26,6 @@ export default class OneTimePassword extends Component {
 
     }
 
-
-
     onChangeOneTime(e) {
         this.setState({
             enterpassword: e.target.value

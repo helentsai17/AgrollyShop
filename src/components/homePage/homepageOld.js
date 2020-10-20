@@ -13,6 +13,8 @@ import cordova from '../../Image/icon/cordova_logo.png'
 import Ionic from '../../Image/icon/Ionic.png'
 import Rlogo from '../../Image/icon/R_logo.png'
 
+import Footer from '../../components/footer'
+
 
 export default class homePageOld extends Component {
 
@@ -155,6 +157,8 @@ export default class homePageOld extends Component {
 
                     </div>
                 </section>
+
+                <Footer/>
 
             </div>
         )

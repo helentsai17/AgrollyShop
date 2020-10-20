@@ -1,0 +1,21 @@
+.answerdisplay{
+    margin: 5% 15%;
+}
+
+.askquestionbox{
+    width: 500px;
+    max-width: 80%;
+    margin: 10% auto;
+    position: fixed;
+   left: 50%;
+   top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 999;
+    background-color: #eee;
+    background: 10px 20px 40px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column ;
+    text-align: left;
+    padding: 10px;
+}

@@ -45,6 +45,12 @@ class Navbar extends Component {
                 </Link>
                 </li>
                 <li className="nav-item">
+                    <Link to="/forum/brazil" className="nav-link">
+                        discussion
+                </Link>
+                </li>
+                
+                <li className="nav-item">
                     <Link to="/farmer/profile" className="nav-link">
                         Profile
                 </Link>

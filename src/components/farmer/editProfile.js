@@ -94,7 +94,7 @@ export default class ProfileEdit extends Component {
 
     getState() {
         const StateData = { stateData }
-        if (this.state.usercountry === "brazil") {
+        if (this.state.usercountry === "Brazil") {
 
             axios.get("http://agrolly.tech/get_cities.php")
                 .then(response => {
@@ -114,7 +114,7 @@ export default class ProfileEdit extends Component {
             }
 
 
-        } else if (this.state.usercountry === "mongolia") {
+        } else if (this.state.usercountry === "Mongolia") {
 
             const Mongoliaset = StateData.stateData.Mongolia
             if (this.state.stateset !== Mongoliaset) {
@@ -128,7 +128,7 @@ export default class ProfileEdit extends Component {
                 this.setState({ stateset: USAset })
             }
 
-        } else if (this.state.usercountry === "taiwan") {
+        } else if (this.state.usercountry === "Taiwan") {
             const TaiwanSet = StateData.stateData.Taiwan
             if (this.state.stateset !== TaiwanSet) {
                 this.setState({ stateset: TaiwanSet })
@@ -149,7 +149,7 @@ export default class ProfileEdit extends Component {
 
     getCity() {
 
-        if (this.state.usercountry === "brazil") {
+        if (this.state.usercountry === "Brazil") {
             if (this.state.userstate == "Parana") {
                 {this.getBrazilCity()}
                 const BrazilCity = this.state.Brazilcities
@@ -161,7 +161,7 @@ export default class ProfileEdit extends Component {
                
             }
 
-        } else if (this.state.usercountry === "mongolia") {
+        } else if (this.state.usercountry === "Mongolia") {
             const MongoliaData = { MongoliaCityData }
             if (this.state.userstate === "Dornod") {
                 const DornodSet = MongoliaData.MongoliaCityData.Dornod
@@ -237,10 +237,10 @@ export default class ProfileEdit extends Component {
                         <div className="input-group mb-3">
                             <select className="custom-select" id="inputGroupSelect02" value={this.state.country} onChange={this.onChangeCountry}  >
                                 <option selected>Choose...</option>
-                                <option value="brazil">Brazil</option>
-                                <option value="mongolia">Mongolia</option>
+                                <option value="Brazil">Brazil</option>
+                                <option value="Mongolia">Mongolia</option>
                                 <option value="USA">United State</option>
-                                <option value="taiwan">Taiwan</option>
+                                <option value="Taiwan">Taiwan</option>
                             </select>
                             <div className="input-group-append">
                                 <label className="input-group-text" htmlFor="inputGroupSelect02">Country</label>

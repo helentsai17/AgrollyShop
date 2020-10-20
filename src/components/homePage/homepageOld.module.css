@@ -1,19 +1,9 @@
-body{
-    font-family: 'Open Sans', sans-serif;
-}
-  
-hr{
-    border-width: 2px;
-    margin: 3%;
-}
-  
-    
     
     
 /* title area */
 .title{
-    background-image: url('https://images.unsplash.com/photo-1519897831810-a9a01aceccd1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80');
-    background-repeat: no-repeat;
+  background-image: url('https://images.unsplash.com/photo-1519897831810-a9a01aceccd1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80');
+  background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: -180px;
     Width: 100%;
@@ -109,29 +99,11 @@ hr{
     }
   
     
-    /* rewardSection */
-    
-    /* .carousel-control-next-icon {
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='Black' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
-    }
-    
-    .carousel-control-prev-icon {
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='Black' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
-    }
-    
-    .reward-image{
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      padding: 10px;
-      width: 500px;
-      height: 400px;
-      margin: 10px;
-    } */
    
-    #useTech{
-      margin: 8%;
-      text-align: center;
-    }
+#useTech{
+  margin: 8%;
+  text-align: center;
+}
   
      /* contact me */
      #contact-me{
@@ -152,24 +124,11 @@ hr{
       
     }
   
-    .soc-icon{
-      width: 30px;
-    }
+.soc-icon{
+  width: 30px;
+}
     
-    a{
-      color:#fff;
-    }
-  
-    /* Media page */
-  
-  /* .youtube{
-    text-align: center;
-    margin: auto 20px;
-  } */
-  
-  
-  /* about page  */
-  
+    
   
   #FAQ{
     text-align: center;
@@ -189,13 +148,13 @@ hr{
     margin-top: 10px;
   }
   
-  .answer{
-    font-size: 15pt;
-    text-align: start;
-    padding-left: 30px;
-    background-color:#dbdbdb;
-    padding: 20px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    margin-bottom: 5px;
-  }
+.answer{
+  font-size: 15pt;
+  text-align: start;
+  padding-left: 30px;
+  background-color:#dbdbdb;
+  padding: 20px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-bottom: 5px;
+}
