@@ -39,7 +39,7 @@ function App() {
 
       <Route path ="/forum/brazil" exact component = {Allforum} />
       <Route path ="/forum/askquestion" exact component = {askquestion} />
-      <Route path ="/forum/myquesiton" exact component = {MyQuestionList} />
+      {/* <Route path ="/forum/myquesiton" exact component = {MyQuestionList} /> */}
       <Route path ="/forum/joinchat/:id" exact component = {joinchat} />
       
 
