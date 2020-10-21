@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Card from './myquestionbox'
+import QuestionCard from './myquestionbox'
+
 
 export default class MyQuestion extends Component {
 
@@ -9,6 +10,7 @@ export default class MyQuestion extends Component {
 
         this.state = {
             question: [],
+            uid: ''
         }
     }
 
@@ -16,28 +18,35 @@ export default class MyQuestion extends Component {
     componentDidMount() {
         var token = localStorage.getItem('usertoken');
         var localdata = JSON.parse(token)
+        console.log(localdata.user_id);
 
-        // axios.get('http://agrolly.tech/quesComm.php?what=comment&id='+localdata.user_id)
-        axios.get('http://agrolly.tech/quesComm.php?what=comment&id='+1)
-            .then(response => {
-                const questioninfo = response.data;
-                console.log(questioninfo)
-                this.setState({ question: questioninfo });
-            })
-            .catch(error => {
-                console.log(error)
-            })
+        var useridinput = {
+            uid: localdata.user_id
+        }
+
+        axios.post('http://agrolly.tech/myquestions.php', useridinput, {
+            headers: {
+                'Content-type': 'application/x-www-form-urlencoded'
+            }
+        }).then(response => {
+            const questionIask = response.data;
+            console.log(questionIask)
+            this.setState({ question: questionIask });
+            
+        })
+
+        
     }
 
     MyQuestionList() {
-        
+
         return this.state.question.map(currentqustion => {
-            return <Card key={currentqustion.cid} question={currentqustion} />
+            console.log(currentqustion.id)
+            return <QuestionCard key={currentqustion.date} question={currentqustion} />
         });
     }
 
     render() {
-
 
         return (
             <div >

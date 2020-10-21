@@ -24,7 +24,7 @@ export default class DisplayChat extends Component {
             postname: "",
             postquestion: "",
             postuid: "",
-            postFile: "",
+            postFile: "NaI",
         }
     }
 
@@ -89,7 +89,7 @@ export default class DisplayChat extends Component {
             })
             .then(response => {
                 console.log(response.data)
-
+                window.location.reload();
             })
             .catch(err => {
                 console.log(err)
@@ -103,21 +103,20 @@ export default class DisplayChat extends Component {
         return (
             <div style={{ "margin": "3% 20%" }} >
 
-            <div >
-                 <form onSubmit={this.onSubmit} >
-                     <textarea  rows="5"
-                        className="form-control"
-                         value={this.state.postquestion}
-                         onChange={this.onChangeQuestion}></textarea>
-                
-                 <div className="form-group">
-                     <input type="submit" value="question sent"
-                         className="btn btn-primary" />
-                 </div>
-                 </form>
-                
-             </div>
-                
+                <div >
+                    <form onSubmit={this.onSubmit} >
+                        <textarea rows="5" className="form-control"
+                            value={this.state.postquestion}
+                            onChange={this.onChangeQuestion}></textarea>
+
+                        <div className="form-group">
+                            <input type="submit" value="question sent"
+                                className="btn btn-primary" />
+                        </div>
+                    </form>
+
+                </div>
+
                 {/* <button className="btn btn-primary" onClick={(e) => this.setState({ isOpen: true })}>here</button>
                 <askquestion isOpen={this.state.isOpen} onClose={(e) => this.setState({ isOpen: false })}>
                     <textarea className="form-control"></textarea>

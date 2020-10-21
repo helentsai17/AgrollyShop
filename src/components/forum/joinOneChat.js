@@ -23,7 +23,7 @@ export default class joinOneChat extends Component {
             state: '',
             answer:[],
             answertext:'',
-            uploadimage:''
+            uploadimage:"NaI"
         }
     }
 

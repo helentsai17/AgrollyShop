@@ -44,10 +44,15 @@ class Navbar extends Component {
                         my sell
                 </Link>
                 </li>
-                <li className="nav-item">
-                    <Link to="/forum/brazil" className="nav-link">
-                        discussion
-                </Link>
+                <li className="nav-item dropdown">
+                    {/* <Link to="/forum/brazil" className="nav-link">discussion</Link> */}
+                <a className="nav-link dropdown-toggle" href="#" id="ForumDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        forum
+                </a>
+                <div className="dropdown-menu" aria-labelledby="ForumDropdown">
+                        <a className="dropdown-item" href="/forum/brazil">discussion</a>
+                        <a className="dropdown-item" href="/forum/myquesiton">my question</a>
+                </div>
                 </li>
                 
                 <li className="nav-item">
