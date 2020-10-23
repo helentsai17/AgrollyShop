@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import QuestionCard from './myquestionbox'
+import style from './myquestionpage.module.css'
 
 
 export default class MyQuestion extends Component {
@@ -18,7 +19,7 @@ export default class MyQuestion extends Component {
     componentDidMount() {
         var token = localStorage.getItem('usertoken');
         var localdata = JSON.parse(token)
-        console.log(localdata.user_id);
+        // console.log(localdata.user_id);
 
         var useridinput = {
             uid: localdata.user_id
@@ -30,27 +31,34 @@ export default class MyQuestion extends Component {
             }
         }).then(response => {
             const questionIask = response.data;
-            console.log(questionIask)
+            // console.log(questionIask)
             this.setState({ question: questionIask });
-            
+
         })
 
-        
+
     }
 
     MyQuestionList() {
 
-        return this.state.question.map(currentqustion => {
-            console.log(currentqustion.id)
-            return <QuestionCard key={currentqustion.date} question={currentqustion} />
+        return this.state.question.map((currentqustion, index) => {
+            console.log(currentqustion)
+            if(currentqustion.date !== undefined){
+                return <QuestionCard key={index} question={currentqustion} />
+            }
+            
         });
     }
 
     render() {
 
         return (
-            <div >
-                <div>{this.MyQuestionList()}</div>
+            <div className={style.background}>
+                <div className={style.edge}>
+                    
+                        <div>{this.MyQuestionList()}</div>
+                    
+                </div>
             </div>
         )
     }

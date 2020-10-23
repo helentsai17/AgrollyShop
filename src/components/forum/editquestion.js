@@ -5,13 +5,15 @@ import style from './chatboxstyle.module.css'
 import { Link } from 'react-router-dom';
 
 
-export default class joinOneChat extends Component {
+export default class editquestion extends Component {
 
 
 
     constructor(props) {
         super(props);
         this.onChangeAnswertext = this.onChangeAnswertext.bind(this)
+        this.onChangequestion = this.onChangequestion.bind(this)
+        this.questionupdate = this.questionupdate.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
 
         this.state = {
@@ -24,8 +26,7 @@ export default class joinOneChat extends Component {
             state: '',
             answer: [],
             answertext: '',
-            uploadimage: "NaI",
-            isUser: false
+            uploadimage: "NaI"
         }
     }
 
@@ -64,6 +65,12 @@ export default class joinOneChat extends Component {
         });
     }
 
+    onChangequestion(e) {
+        this.setState({
+            question: e.target.value
+        })
+    }
+
 
     onSubmit(e) {
         e.preventDefault();
@@ -95,12 +102,37 @@ export default class joinOneChat extends Component {
             })
     }
 
+    questionupdate(e){
+        e.preventDefault();
+        var token = localStorage.getItem('usertoken');
+        var localdata = JSON.parse(token)
+
+        const updatequestion = {
+            uid:localdata.user_id,
+            uqid: this.props.match.params.id,
+            uquestion:this.state.question
+        }
+        console.log(updatequestion)
+
+        axios
+        .post('http://agrolly.tech/updatequestion.php', updatequestion, {
+            headers: {
+                'Content-type': 'application/x-www-form-urlencoded'
+            }
+        })
+        .then(response => {
+            console.log(response.data)
+            window.location = "/forum/joinchat/"+this.props.match.params.id
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }
+
 
     chatanwerList() {
         return this.state.answer.map(currentanswer => {
-            if(currentanswer.date !== undefined){
-            return <Card key={currentanswer.date} deleteComment={this.deleteComment} answer={currentanswer} isUser={(e) => this.setState({ isUser: false })} />
-            }
+            return <Card key={currentanswer.date} deleteComment={this.deleteComment} answer={currentanswer} />
         });
     }
 
@@ -128,23 +160,21 @@ export default class joinOneChat extends Component {
 
 
     render() {
-        var token = localStorage.getItem('usertoken');
-        var localdata = JSON.parse(token)
-        let editdisplay = (
-            <div>
-                <Link to={'/forum/editquestion/' + this.props.match.params.id}>Edit</Link>
-            </div>
-        )
-        if (localdata.user_id !== this.state.user_id) {
-            editdisplay = null;
-        }
-
-
         return (
 
             <div className={style.answerdisplay}>
-
-                <p>{this.state.question}</p>{editdisplay}
+                <form onSubmit={this.questionupdate}>
+                    <div className="form-group">
+                        <textarea type="text" className="form-control"
+                            value={this.state.question}
+                            onChange={this.onChangequestion} />
+                    </div>
+                    <div className="form-group">
+                        <input type="submit" value="edit"
+                            className="btn btn-primary" />   
+                    </div>
+                    
+                </form>
                 <p>{this.state.name}</p>
                 <p>{this.state.state} ,{this.state.country}</p>
                 <p>{this.state.date}</p>

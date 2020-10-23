@@ -1,8 +1,3 @@
-body, html {
-    height: 100%;
-    margin: 0;
-}
-
 .backgroundRegister{
     background-image: url(../../Image/background/register.png);
     height: 100%;

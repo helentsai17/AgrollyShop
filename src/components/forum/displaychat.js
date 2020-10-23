@@ -32,7 +32,7 @@ export default class DisplayChat extends Component {
     componentDidMount() {
         axios.get('http://agrolly.tech/forum2.php')
             .then(response => {
-                console.log(response.data)
+                // console.log(response.data)
                 const chatinfo = response.data;
                 this.setState({ chats: chatinfo });
             })
@@ -57,14 +57,35 @@ export default class DisplayChat extends Component {
     ChatList() {
         let countryfiler = this.state.chats.filter(
             (countries) => {
-                console.log(countries.country == 'Brazil')
+                // console.log(countries.country == 'Brazil')
                 return countries.country === this.state.country
             }
         )
 
         return countryfiler.map(currentchat => {
-            return <Card key={currentchat.id} chat={currentchat} />
+            return <Card key={currentchat.id} chat={currentchat} deleteQuestion={this.deleteQuestion}/>
         });
+    }
+
+    deleteQuestion(id) {
+        const deletC = {
+            what: "question",
+            qid: id
+        }
+
+        axios
+            .post('http://agrolly.tech/deletePost.php', deletC, {
+                headers: {
+                    'Content-type': 'application/x-www-form-urlencoded'
+                }
+            })
+            .then(response => {
+                console.log(response.data)
+                window.location.reload();
+            })
+            .catch(err => {
+                console.log(err)
+            })
     }
 
     onSubmit(e) {
@@ -88,7 +109,7 @@ export default class DisplayChat extends Component {
                 }
             })
             .then(response => {
-                console.log(response.data)
+                // console.log(response.data)
                 window.location.reload();
             })
             .catch(err => {
@@ -101,13 +122,14 @@ export default class DisplayChat extends Component {
 
 
         return (
-            <div style={{ "margin": "3% 20%" }} >
-
-                <div >
+            <div className ={style.background} >
+                <div className = {style.edge}>
+                <div>
                     <form onSubmit={this.onSubmit} >
                         <textarea rows="5" className="form-control"
                             value={this.state.postquestion}
                             onChange={this.onChangeQuestion}></textarea>
+                        
 
                         <div className="form-group">
                             <input type="submit" value="question sent"
@@ -123,6 +145,7 @@ export default class DisplayChat extends Component {
                 </askquestion> */}
 
                 <div>{this.ChatList()}</div>
+                </div>
             </div>
         )
     }

@@ -19,7 +19,7 @@ export default class DisplayChat extends Component {
         axios.get('http://agrolly.tech/quesComm.php?what=comment&id='+this.state.questionID)
         .then(response =>{
              const answerdata = response.data
-            //  console.log(answerdata)
+            //  console.log(answerdata
              this.setState({answerarry:answerdata})
         })
     }
@@ -28,7 +28,9 @@ export default class DisplayChat extends Component {
 
         return this.state.answerarry.map(currentanswer => {
             // console.log(currentanswer.id)
+            if(currentanswer.date !== undefined){
             return <AnswerCard key={currentanswer.date} answer={currentanswer} />
+        }
         });
     }
     
