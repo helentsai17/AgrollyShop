@@ -1,0 +1,15 @@
+.formStyle{
+    margin: 3% 30%;
+    border-style: solid;
+    padding: 2%;
+    border-radius: 10px;
+    border-color: grey;
+    background-color: gray;
+}
+
+.infotext{
+    font-size: 12px;
+}
+.weatherimg{
+    width: 50%;
+}

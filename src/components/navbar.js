@@ -41,9 +41,16 @@ class Navbar extends Component {
             <ul className="navbar-nav">
                 <li className="nav-item">
                     <Link to="/farmer/cropSell" className="nav-link">
-                        my sell
+                        sell
                 </Link>
                 </li>
+                
+                <li className="nav-item">
+                    <Link to="/weather/annaul" className="nav-link">
+                        weather
+                </Link>
+                </li>
+
                 <li className="nav-item dropdown">
                     {/* <Link to="/forum/brazil" className="nav-link">discussion</Link> */}
                 <a className="nav-link dropdown-toggle" href="#" id="ForumDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

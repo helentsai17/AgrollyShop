@@ -21,6 +21,7 @@ import joinchat from './components/forum/joinOneChat'
 import askquestion from './components/forum/askquestion/askquestion'
 import MyQuestionList from './components/forum/myquestion'
 import editquestion from './components/forum/editquestion';
+import annaulweater from './components/weatherPage/annualpage'
 
 
 function App() {
@@ -44,6 +45,8 @@ function App() {
       <Route path ="/forum/myquesiton" exact component = {MyQuestionList} />
       <Route path ="/forum/joinchat/:id" exact component = {joinchat} />
       <Route path ="/forum/editquestion/:id" exact component = {editquestion} />
+
+      <Route path ="/weather/annaul" exact component = {annaulweater} />
      
 
       <Route path ="/farmer/cropSell" exact component = {cropSell} />

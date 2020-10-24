@@ -61,3 +61,11 @@ class Navbar extends Component {
 
 }
 export default withRouter(Navbar)
+
+// const citycode = this.state.currentcitycode
+        // const MAXtemperature = "TEMPMAX_fcast_" + citycode
+        // const MINtemperature = "TEMPMIN_fcast_" + citycode
+        // const AVAtemperature = "TEMPMEDIA_fcast_" + citycode
+        // const rainfall = "fcast_class_" + citycode
+        // const rainorno = "rained_" + citycode + "_yN"
+        // const icon = "icon_" + citycode
