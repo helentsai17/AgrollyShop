@@ -47,6 +47,7 @@ export default class ProfileEdit extends Component {
             state: localdata.state,
             user: localdata.user,
 
+
         })
         { this.getState() }
     }
@@ -101,7 +102,7 @@ export default class ProfileEdit extends Component {
                     console.log(response.data)
                     const states = response.data;
                     this.setState({ states: states });
-
+                    
                 })
                 .catch((error) => {
                     console.log("error come from resgister: " + error)
@@ -210,6 +211,16 @@ export default class ProfileEdit extends Component {
             .then(response => {
                 console.log(response.data)
 
+                const EditProfile = {
+                    user_id: this.state.user_id,
+                    name: this.state.name,
+                    user:this.state.user,    
+                    country: this.state.country,
+                    state: this.state.state,
+                    city: this.state.city,
+                }
+                localStorage.setItem('usertoken', JSON.stringify(EditProfile))
+                window.location = "/farmer/profile"
             })
             .catch(err => {
                 console.log(err)
