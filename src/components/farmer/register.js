@@ -145,7 +145,7 @@ export default class Register extends Component {
     getCity() {
 
         if (this.state.usercountry === "Brazil") {
-            if (this.state.userstate == "Parana") {
+            if (this.state.userstate === "Parana") {
                 { this.getBrazilCity() }
                 const BrazilCity = this.state.Brazilcities
                 // console.log(BrazilCity);
@@ -158,17 +158,17 @@ export default class Register extends Component {
 
         } else if (this.state.usercountry === "Mongolia") {
             const MongoliaData = { MongoliaCityData }
-            if (this.state.userstate == "Dornod") {
+            if (this.state.userstate === "Dornod") {
                 const DornodSet = MongoliaData.MongoliaCityData.Dornod
                 if (this.state.cities !== DornodSet) {
                     this.setState({ cities: DornodSet })
                 }
-            } else if (this.state.userstate == "Sukhbaatar") {
+            } else if (this.state.userstate === "Sukhbaatar") {
                 const SukhbaatarSet = MongoliaData.MongoliaCityData.Sukhbaatar
                 if (this.state.cities !== SukhbaatarSet) {
                     this.setState({ cities: SukhbaatarSet })
                 }
-            } else if (this.state.userstate == "Khentii") {
+            } else if (this.state.userstate === "Khentii") {
                 const KhentiiSet = MongoliaData.MongoliaCityData.Khentii
                 if (this.state.cities !== KhentiiSet) {
                     this.setState({ cities: KhentiiSet })

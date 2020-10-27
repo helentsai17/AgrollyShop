@@ -69,3 +69,23 @@ export default withRouter(Navbar)
         // const rainfall = "fcast_class_" + citycode
         // const rainorno = "rained_" + citycode + "_yN"
         // const icon = "icon_" + citycode
+
+
+        // const postion = navigator.geolocation.getCurrentPosition(function (position) {
+        //     const lat = position.coords.latitude
+        //     const long = position.coords.longitude
+
+        //     console.log(lat)
+        //     return lat
+
+            // const languageList = "en-US"
+            // const APIkey = "da328055e2e940d8b28055e2e9e0d851"
+            // axios.get('https://api.weather.com/v1/geocode/' + position.coords.latitude + '/' + position.coords.longitude + '/forecast/intraday/3day.json?units=m&language=' + languageList + '&apiKey=' + APIkey)
+            //     .then(response => {
+            //         console.log(response.data.forecasts)
+            //     })
+
+
+        // });
+
+        // console.log(postion)

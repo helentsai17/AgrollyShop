@@ -45,10 +45,14 @@ class Navbar extends Component {
                 </Link>
                 </li>
                 
-                <li className="nav-item">
-                    <Link to="/weather/annaul" className="nav-link">
-                        weather
-                </Link>
+                <li className="nav-item dropdown">
+                    {/* <Link to="/weather/annaul" className="nav-link">weather</Link> */}
+                    <a className="nav-link dropdown-toggle" href="#" id="WeatherDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">weather</a>
+                <div className="dropdown-menu" aria-labelledby="WeatherDropdown">
+                        <a className="dropdown-item" href="/weather/hourly">hour</a>
+                        <a className="dropdown-item" href="/weather/weekly">Weekly</a>
+                        <a className="dropdown-item" href="/weather/annaul">Annaul</a>
+                </div>
                 </li>
 
                 <li className="nav-item dropdown">
