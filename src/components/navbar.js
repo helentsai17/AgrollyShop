@@ -44,28 +44,33 @@ class Navbar extends Component {
                         sell
                 </Link>
                 </li>
-                
+                <li className="nav-item">
+                    <Link to="/croprisk" className="nav-link">
+                        crop risk
+                </Link>
+                </li>
+
                 <li className="nav-item dropdown">
                     {/* <Link to="/weather/annaul" className="nav-link">weather</Link> */}
                     <a className="nav-link dropdown-toggle" href="#" id="WeatherDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">weather</a>
-                <div className="dropdown-menu" aria-labelledby="WeatherDropdown">
+                    <div className="dropdown-menu" aria-labelledby="WeatherDropdown">
                         <a className="dropdown-item" href="/weather/hourly">hour</a>
                         <a className="dropdown-item" href="/weather/weekly">Weekly</a>
                         <a className="dropdown-item" href="/weather/annaul">Annaul</a>
-                </div>
+                    </div>
                 </li>
 
                 <li className="nav-item dropdown">
                     {/* <Link to="/forum/brazil" className="nav-link">discussion</Link> */}
-                <a className="nav-link dropdown-toggle" href="#" id="ForumDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a className="nav-link dropdown-toggle" href="#" id="ForumDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         forum
                 </a>
-                <div className="dropdown-menu" aria-labelledby="ForumDropdown">
+                    <div className="dropdown-menu" aria-labelledby="ForumDropdown">
                         <a className="dropdown-item" href="/forum/brazil">discussion</a>
                         <a className="dropdown-item" href="/forum/myquesiton">my question</a>
-                </div>
+                    </div>
                 </li>
-                
+
                 <li className="nav-item">
                     <Link to="/farmer/profile" className="nav-link">
                         Profile

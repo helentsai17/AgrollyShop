@@ -24,6 +24,7 @@ import editquestion from './components/forum/editquestion';
 import annaulweather from './components/weatherPage/annualpage'
 import weeklyweather from './components/weatherPage/weeklyweather'
 import hourlyweather from './components/weatherPage/hourlyweather'
+import riskpage from'./components/riskManagement/riskpage'
 
 
 function App() {
@@ -55,6 +56,8 @@ function App() {
       <Route path ="/farmer/cropSell" exact component = {cropSell} />
       <Route path ="/farmer/cropCreate" exact component = {cropCreate} />
       
+      <Route path ="/croprisk" exact component = {riskpage} />
+
       
 
 
