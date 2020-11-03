@@ -13,19 +13,34 @@ export default class requireSearch extends Component {
         this.state = {
             city: '',
             month: '',
-            allcity:[],
-            po_place:''
+            allcity: [],
+            po_place: '',
+            CityCode: '',
+            weatherdata: [],
+
+            avg1: '',
+            avg2: '',
+            avg3: '',
+            avg4: '',
+            avg5: '',
+            avg6: '',
+            avg7: '',
+            avg8: '',
+            avg9: '',
+            avg10: '',
+            avg11: '',
+            avg12: '',
         }
 
     }
 
     componentDidMount() {
-        
+
         axios.get('http://agrolly.tech/get_cities.php')
             .then(response => {
                 const getcities = response.data
                 this.setState({ allcity: getcities })
-                
+
 
             }).catch((error) => {
                 console.log("error from get cities: " + error)
@@ -36,8 +51,13 @@ export default class requireSearch extends Component {
         this.state.allcity.map((currentcity) => {
             if (currentcity.City == this.state.city) {
                 const currentcitypo = currentcity.po_place
-                console.log(currentcitypo)
-                this.setState({ po_place: currentcitypo })
+                // console.log(currentcitypo)
+                const CityCode = currentcity.Code
+                if (currentcity.po_place != this.state.po_place) {
+                    this.setState({ po_place: currentcitypo })
+                    this.setState({ CityCode: CityCode })
+                }
+
             }
         })
         // this.getLong();
@@ -54,26 +74,191 @@ export default class requireSearch extends Component {
         this.setState({
             city: e.target.value
         })
-        this.getCityCode();
+
     }
 
-    
+
+    componentDidUpdate() {
+        { this.getCityCode() }
+        { this.countAvarageTemp() }
+    }
+
+    countAvarageTemp() {
+        axios.get('http://agrolly.tech/annualForecast.php?country=Brazil')
+            .then(responsedata => {
+                // console.log(responsedata)
+                const weatherdata = responsedata.data
+                this.setState({ weatherdata: weatherdata })
+            })
+
+        let month1 = 0, count1 = 0, getavg1 = 0
+        let month2 = 0, count2 = 0, getavg2 = 0
+        let month3 = 0, count3 = 0, getavg3 = 0
+        let month4 = 0, count4 = 0, getavg4 = 0
+        let month5 = 0, count5 = 0, getavg5 = 0
+        let month6 = 0, count6 = 0, getavg6 = 0
+        let month7 = 0, count7 = 0, getavg7 = 0
+        let month8 = 0, count8 = 0, getavg8 = 0
+        let month9 = 0, count9 = 0, getavg9 = 0
+        let month10 = 0, count10 = 0, getavg10 = 0
+        let month11 = 0, count11 = 0, getavg11 = 0
+        let month12 = 0, count12 = 0, getavg12 = 0
+
+        const monthlyava = this.state.weatherdata.map(data => {
+            const date = data["Date.fcst"]
+            // console.log(date)
+            const AVAtemperature = "TEMPMEDIA_fcast_" + this.state.CityCode
+            // console.log(data[AVAtemperature])
+            if (date.substring(5, 7).includes("01")) {
+                month1 = data[AVAtemperature] + month1
+                count1++
+                getavg1 = month1 / count1;
+            } else if (date.substring(5, 7).includes("02")) {
+                month2 = data[AVAtemperature] + month2
+                count2++
+                getavg2 = month2 / count2;
+            } else if (date.substring(5, 7).includes("03")) {
+                month3 = data[AVAtemperature] + month3
+                count3++
+                getavg3 = month3 / count3;
+            } else if (date.substring(5, 7).includes("04")) {
+                month4 = data[AVAtemperature] + month4
+                count4++
+                getavg4 = month4 / count4;
+            } else if (date.substring(5, 7).includes("05")) {
+                month5 = data[AVAtemperature] + month5
+                count5++
+                getavg5 = month5 / count5;
+            } else if (date.substring(5, 7).includes("06")) {
+                month6 = data[AVAtemperature] + month6
+                count6++
+                getavg6 = month6 / count6;
+            } else if (date.substring(5, 7).includes("07")) {
+                month7 = data[AVAtemperature] + month7
+                count7++
+                getavg7 = month7 / count7;
+            } else if (date.substring(5, 7).includes("08")) {
+                month8 = data[AVAtemperature] + month8
+                count8++
+                getavg8 = month8 / count8;
+            } else if (date.substring(5, 7).includes("09")) {
+                month9 = data[AVAtemperature] + month9
+                count9++
+                getavg9 = month9 / count9;
+            } else if (date.substring(5, 7).includes("10")) {
+                month10 = data[AVAtemperature] + month10
+                count10++
+                getavg10 = month10 / count10;
+            } else if (date.substring(5, 7).includes("11")) {
+                month11 = data[AVAtemperature] + month11
+                count11++
+                getavg11 = month11 / count11;
+            } else if (date.substring(5, 7).includes("12")) {
+                month12 = data[AVAtemperature] + month12
+                count12++
+                getavg12 = month12 / count12;
+            }
+        })
+
+        if (getavg1 != this.state.avg1) {
+            this.setState({
+                avg1: getavg1
+            })
+        }
+        if (getavg2 != this.state.avg2) {
+            this.setState({
+                avg2: getavg2
+            })
+        }
+        if (getavg3 != this.state.avg3) {
+            this.setState({
+                avg3: getavg3
+            })
+        }
+        if (getavg4 != this.state.avg4) {
+            this.setState({
+                avg4: getavg4
+            })
+        }
+        if (getavg5 != this.state.avg5) {
+            this.setState({
+                avg5: getavg5
+            })
+        }
+        if (getavg6 != this.state.avg6) {
+            this.setState({
+                avg6: getavg6
+            })
+        }
+        if (getavg7 != this.state.avg7) {
+            this.setState({
+                avg7: getavg7
+            })
+        }
+        if (getavg8 != this.state.avg8) {
+            this.setState({
+                avg8: getavg8
+            })
+        }
+        if (getavg9 != this.state.avg9) {
+            this.setState({
+                avg9: getavg9
+            })
+        }
+        if (getavg10 != this.state.avg10) {
+            this.setState({
+                avg10: getavg10
+            })
+        }
+        if (getavg11 != this.state.avg11) {
+            this.setState({
+                avg11: getavg11
+            })
+        }
+        if (getavg12 != this.state.avg12) {
+            this.setState({
+                avg12: getavg12
+            })
+        }
+    }
+
 
     onSubmit(e) {
         e.preventDefault();
-        this.getCityCode();
-        console.log(this.state.month)
-        console.log(this.state.city)
-        //have to fix here the valuse dose not get in ontime
-        console.log(this.state.po_place)
+        // this.getCityCode();
+        const datainfo = {
+            po_place: this.state.po_place,
+            month: this.state.month,
+            CityCode: this.state.CityCode,
+            avg1: this.state.avg1,
+            avg2: this.state.avg2,
+            avg3: this.state.avg3,
+            avg4: this.state.avg4,
+            avg5: this.state.avg5,
+            avg6: this.state.avg6,
+            avg7: this.state.avg7,
+            avg8: this.state.avg8,
+            avg9: this.state.avg9,
+            avg10: this.state.avg10,
+            avg11: this.state.avg11,
+            avg12: this.state.avg12,
+        }
+        
 
+        this.props.history.push({
+            pathname: '/croprisk/display',
+            state: { detail: datainfo }
+        })
     }
 
 
     render() {
         return (
-            <div>
-            <form onSubmit={this.onSubmit} >
+            <div style={{ "margin": "2% 30%" }}>
+                <h1>test: {this.state.avg1}</h1>
+
+                <h1>test: {this.state.avg5}</h1>
+                <form onSubmit={this.onSubmit} >
                     <div className="input-group mb-3">
                         <div className="input-group-prepend">
                             <label className="input-group-text" htmlFor="inputTime">Month</label>
@@ -110,7 +295,7 @@ export default class requireSearch extends Component {
                             className="btn btn-primary" />
                     </div>
                 </form>
-                
+
             </div>
         )
     }

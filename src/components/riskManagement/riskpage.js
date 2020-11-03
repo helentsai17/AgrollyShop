@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component ,useState } from 'react';
 import axios from 'axios'
 import VegetablesCard from './vegetableCard'
 
@@ -10,37 +10,50 @@ export default class riskpage extends Component {
     constructor(props) {
         super(props);
 
-        this.OnChnageCity = this.OnChnageCity.bind(this)
-        this.OnChnageMonth = this.OnChnageMonth.bind(this)
-        this.onSubmit = this.onSubmit.bind(this)
-
+        const state = this.props.location.state.detail;
         this.state = {
-            city: '',
-            month: '',
+            month: state.month,
+            po_place: state.po_place,
+            CityCode: state.CityCode,
+            avg1: state.avg1,
+            avg2: state.avg2,
+            avg3: state.avg3,
+            avg4: state.avg4,
+            avg5: state.avg5,
+            avg6: state.avg6,
+            avg7: state.avg7,
+            avg8: state.avg8,
+            avg9: state.avg9,
+            avg10: state.avg10,
+            avg11: state.avg11,
+            avg12: state.avg12,
+
+
+
             vegetables: [],
-            allcity: [],
-            po_place: '',
             allcityLong: [],
-            citydata: []
+            citydata: [],
+
+            weatherdata: [],
+            avaTemp:[],
+
+            monthava:[],
+
+            
+
         }
 
     }
 
     componentDidMount() {
-        //get city
-        var token = localStorage.getItem('usertoken');
-        var localdata = JSON.parse(token)
-        this.setState({ city: localdata.city })
-
-        // to get all the city for the option 
-        axios.get('http://agrolly.tech/get_cities.php')
-            .then(response => {
-                const getcities = response.data
-                this.setState({ allcity: getcities })
-                this.getCityCode();
-
-            }).catch((error) => {
-                console.log("error from get cities: " + error)
+        axios.get('http://www.agrolly.tech/po_value.php')
+            .then(res => {
+                // console.log(res.data)
+                const po = res.data
+                this.setState({ allcityLong: po })
+                this.findcityLong()
+            }).catch(error => {
+                console.log(error)
             })
 
         //get crop detail
@@ -54,76 +67,69 @@ export default class riskpage extends Component {
                 console.log('error come from get crop api: ' + error)
             })
     }
-    //get the city code like S_25
-    getCityCode() {
-        this.state.allcity.map((currentcity) => {
-            if (currentcity.City == this.state.city) {
-                const currentcitypo = currentcity.po_place
-                // const cityname = currentcity.City
-                // console.log(currentcitypo)
-                this.setState({ po_place: currentcitypo })
+
+
+    findcityLong() {
+        const long = this.state.po_place.slice(2)
+        // const NorS = this.state.po_place.subString(0)
+        return this.state.allcityLong.filter(citylong => {
+            if (citylong.city_long === long) {
+                // console.log(citylong)
+                this.setState({ citydata: citylong })
             }
         })
-        // this.getLong();
     }
 
-    // getLong() {
-    //     axios.get('http://www.agrolly.tech/po_value.php')
-    //         .then(res => {
-    //             // console.log(res.data)
-    //             const po = res.data
-    //             this.setState({ allcityLong: po })
-    //             this.findcityLong()
-    //         }).catch(error => {
-    //             console.log(error)
-    //         })
-    // }
-
-    // findcityLong() {
-    //     const long = this.state.po_place.slice(2)
-    //     return this.state.allcityLong.filter(citylong => {
-    //         if (citylong.city_long === long) {
-    //             // console.log(citylong)
-    //             this.setState({ citydata: citylong })
-    //         }
-    //     })
-    // }
-
     vegetablesList() {
-        return this.state.vegetables.map((vege,index) => {
+        return this.state.vegetables.map((vege, index) => {
+            // console.log(vege)
             return <VegetablesCard
                 key={index}
                 vege={vege}
-                cityCode={this.state.po_place} 
-                selectMount={this.state.month} />
+                cityPo={this.state.po_place}
+                selectMount={this.state.month}
+                citydata={this.state.citydata} 
+                CityCode={this.state.CityCode}
+                findavaTemp={this.AverageTemp}/>
+        })
+    }
+
+    vegetablesList() {
+        return this.state.vegetables.map((vege, index) => {
+            // console.log(vege)
+            return <VegetablesCard
+                key={index}
+                vege={vege}
+                cityPo={this.state.po_place}
+                selectMount={this.state.month}
+                citydata={this.state.citydata} 
+                CityCode={this.state.CityCode}
+                findavaTemp={this.AverageTemp}
+                avg1 ={this.state.avg1}
+                avg2 ={this.state.avg2}
+                avg3 ={this.state.avg3}
+                avg4 ={this.state.avg4}
+                avg5 ={this.state.avg5}
+                avg6 ={this.state.avg6}
+                avg7 ={this.state.avg7}
+                avg8 ={this.state.avg8}
+                avg9 ={this.state.avg9}
+                avg10 ={this.state.avg10}
+                avg11 ={this.state.avg11}
+                avg12 ={this.state.avg12}
+                
+                />
         })
     }
 
 
-    OnChnageMonth(e) {
-        this.setState({
-            month: e.target.value
-        })
-    }
-
-    OnChnageCity(e) {
-        this.setState({
-            city: e.target.value
-        })
-    }
-
-    onSubmit(e) {
-        e.preventDefault();
-        console.log(this.state.month)
-        console.log(this.state.city)
-        this.getCityCode();
-
-    }
     render() {
         return (
             <div>
+            {/* {this.state.avaTemp.map(test => <h2>{test}</h2>)} */}
                 {this.vegetablesList()}
-
+                {/* {this.AverageTemp()} */}
+               
             </div>
         )
     }

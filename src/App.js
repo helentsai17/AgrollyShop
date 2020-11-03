@@ -58,7 +58,7 @@ function App() {
       <Route path ="/farmer/cropCreate" exact component = {cropCreate} />
       
       <Route path ="/croprisk" exact component = {requiresearch} />
-
+      <Route path ="/croprisk/display" exact component = {riskpage} />
       
 
 

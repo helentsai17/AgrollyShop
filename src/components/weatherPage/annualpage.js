@@ -55,7 +55,7 @@ export default class Annualpage extends Component {
             
         axios.get('http://agrolly.tech/annualForecast.php?country=Brazil')
             .then(response => {
-                // console.log(response.data)
+                console.log(response.data)
                 const weatherdata = response.data
                 this.setState({ weatherdata: weatherdata })
                 this.getMonth();
@@ -106,7 +106,7 @@ export default class Annualpage extends Component {
             const citycode = this.state.currentcitycode
             const MAXtemperature = "TEMPMAX_fcast_" + citycode
             const MINtemperature = "TEMPMIN_fcast_" + citycode
-        // const AVAtemperature = "TEMPMEDIA_fcast_" + citycode
+        //  const AVAtemperature = "TEMPMEDIA_fcast_" + citycode
             const rainfall = "fcast_class_" + citycode
             const rainorno = "rained_" + citycode + "_yN"
             const icon = "icon_" + citycode
