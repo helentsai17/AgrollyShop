@@ -28,18 +28,14 @@ export default class riskpage extends Component {
             avg11: state.avg11,
             avg12: state.avg12,
 
-
-
             vegetables: [],
             allcityLong: [],
             citydata: [],
 
             weatherdata: [],
             avaTemp:[],
-
+            placedata:"",
             monthava:[],
-
-            
 
         }
 
@@ -52,6 +48,7 @@ export default class riskpage extends Component {
                 const po = res.data
                 this.setState({ allcityLong: po })
                 this.findcityLong()
+                this.GetplaceMonth()
             }).catch(error => {
                 console.log(error)
             })
@@ -71,14 +68,16 @@ export default class riskpage extends Component {
 
     findcityLong() {
         const long = this.state.po_place.slice(2)
-        // const NorS = this.state.po_place.subString(0)
         return this.state.allcityLong.filter(citylong => {
             if (citylong.city_long === long) {
                 // console.log(citylong)
                 this.setState({ citydata: citylong })
             }
         })
+
     }
+
+
 
     vegetablesList() {
         return this.state.vegetables.map((vege, index) => {
@@ -86,25 +85,10 @@ export default class riskpage extends Component {
             return <VegetablesCard
                 key={index}
                 vege={vege}
-                cityPo={this.state.po_place}
-                selectMount={this.state.month}
+                placedata = {this.state.placedata}
                 citydata={this.state.citydata} 
-                CityCode={this.state.CityCode}
-                findavaTemp={this.AverageTemp}/>
-        })
-    }
-
-    vegetablesList() {
-        return this.state.vegetables.map((vege, index) => {
-            // console.log(vege)
-            return <VegetablesCard
-                key={index}
-                vege={vege}
-                cityPo={this.state.po_place}
-                selectMount={this.state.month}
-                citydata={this.state.citydata} 
-                CityCode={this.state.CityCode}
-                findavaTemp={this.AverageTemp}
+                po_place ={this.state.po_place}
+                selectMount = {this.state.month}
                 avg1 ={this.state.avg1}
                 avg2 ={this.state.avg2}
                 avg3 ={this.state.avg3}
@@ -117,7 +101,6 @@ export default class riskpage extends Component {
                 avg10 ={this.state.avg10}
                 avg11 ={this.state.avg11}
                 avg12 ={this.state.avg12}
-                
                 />
         })
     }
@@ -126,10 +109,7 @@ export default class riskpage extends Component {
     render() {
         return (
             <div>
-            {/* {this.state.avaTemp.map(test => <h2>{test}</h2>)} */}
-                {this.vegetablesList()}
-                {/* {this.AverageTemp()} */}
-               
+                {this.vegetablesList()}  
             </div>
         )
     }

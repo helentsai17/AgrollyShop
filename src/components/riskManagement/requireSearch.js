@@ -30,12 +30,13 @@ export default class requireSearch extends Component {
             avg10: '',
             avg11: '',
             avg12: '',
+
+            allcityLong: [],
         }
 
     }
 
     componentDidMount() {
-
         axios.get('http://agrolly.tech/get_cities.php')
             .then(response => {
                 const getcities = response.data
@@ -45,6 +46,16 @@ export default class requireSearch extends Component {
             }).catch((error) => {
                 console.log("error from get cities: " + error)
             })
+        axios.get('http://www.agrolly.tech/po_value.php')
+            .then(res => {
+                const po = res.data
+                this.setState({ allcityLong: po })
+
+            }).catch(error => {
+                console.log(error)
+            })
+
+
     }
 
     getCityCode() {
@@ -77,11 +88,11 @@ export default class requireSearch extends Component {
 
     }
 
-
     componentDidUpdate() {
         { this.getCityCode() }
         { this.countAvarageTemp() }
     }
+
 
     countAvarageTemp() {
         axios.get('http://agrolly.tech/annualForecast.php?country=Brazil')
@@ -104,7 +115,9 @@ export default class requireSearch extends Component {
         let month11 = 0, count11 = 0, getavg11 = 0
         let month12 = 0, count12 = 0, getavg12 = 0
 
-        const monthlyava = this.state.weatherdata.map(data => {
+        
+        const monthlyava = this.state.weatherdata.map((data, index) => {
+
             const date = data["Date.fcst"]
             // console.log(date)
             const AVAtemperature = "TEMPMEDIA_fcast_" + this.state.CityCode
@@ -159,68 +172,84 @@ export default class requireSearch extends Component {
                 getavg12 = month12 / count12;
             }
         })
+    
+        new Promise(resolve => {
+            setTimeout(() => {
+                resolve()
+                if (Math.floor(getavg1) !== Math.floor(this.state.avg1) && getavg1 !== 0) {
+                    this.setState({
+                        avg1: getavg1
+                    })
+                }
+                if (Math.floor(getavg2) !== Math.floor(this.state.avg2) && getavg2 !== 0) {
+                    this.setState({
+                        avg2: getavg2
+                    })
+                }
+                if (Math.floor(getavg3) !== Math.floor(this.state.avg3) && getavg3 !== 0) {
+                    this.setState({
+                        avg3: getavg3,
+                    })
+                }
+                if (Math.floor(getavg4) !== Math.floor(this.state.avg4) && getavg4 !== 0) {
+                    this.setState({
+                        avg4: getavg4,
+                    })
+                }
+                if (Math.floor(getavg5) !== Math.floor(this.state.avg5) && getavg5 !== 0) {
+                    this.setState({ avg5: getavg5 })
+                }
+                if (Math.floor(getavg6) !== Math.floor(this.state.avg6) && getavg6 !== 0) {
+                    this.setState({
+                        avg6: getavg6
+                    })
+                }
+                if (Math.floor(getavg7) !== Math.floor(this.state.avg7) && getavg7 !== 0) {
+                    this.setState({
+                        avg7: getavg7
+                    })
+                }
+                if (Math.floor(getavg8) !== Math.floor(this.state.avg8) && getavg8 !== 0) {
+                    this.setState({
+                        avg8: getavg8
+                    })
+                }
+                if (Math.floor(getavg9) !== Math.floor(this.state.avg9) && getavg9 !== 0) {
+                    this.setState({
+                        avg9: getavg9
+                    })
+                }
+                if (Math.floor(getavg10) !== Math.floor(this.state.avg10) && getavg10 !== 0) {
+                    this.setState({
+                        avg10: getavg10
+                    })
+                }
+                if (Math.floor(getavg11) !== Math.floor(this.state.avg11) && getavg11 !== 0) {
+                    this.setState({
+                        avg11: getavg11
+                    })
+                }
+                if (Math.floor(getavg12) !== Math.floor(this.state.avg12) && getavg12 !== 0) {
+                    this.setState({
+                        avg12: getavg12,
+                    })
+                }
+                
+            }, 5 * 1000)
+        })
 
-        if (getavg1 != this.state.avg1) {
-            this.setState({
-                avg1: getavg1
-            })
-        }
-        if (getavg2 != this.state.avg2) {
-            this.setState({
-                avg2: getavg2
-            })
-        }
-        if (getavg3 != this.state.avg3) {
-            this.setState({
-                avg3: getavg3
-            })
-        }
-        if (getavg4 != this.state.avg4) {
-            this.setState({
-                avg4: getavg4
-            })
-        }
-        if (getavg5 != this.state.avg5) {
-            this.setState({
-                avg5: getavg5
-            })
-        }
-        if (getavg6 != this.state.avg6) {
-            this.setState({
-                avg6: getavg6
-            })
-        }
-        if (getavg7 != this.state.avg7) {
-            this.setState({
-                avg7: getavg7
-            })
-        }
-        if (getavg8 != this.state.avg8) {
-            this.setState({
-                avg8: getavg8
-            })
-        }
-        if (getavg9 != this.state.avg9) {
-            this.setState({
-                avg9: getavg9
-            })
-        }
-        if (getavg10 != this.state.avg10) {
-            this.setState({
-                avg10: getavg10
-            })
-        }
-        if (getavg11 != this.state.avg11) {
-            this.setState({
-                avg11: getavg11
-            })
-        }
-        if (getavg12 != this.state.avg12) {
-            this.setState({
-                avg12: getavg12
-            })
-        }
+            // if (getavg1 !== this.state.avg1 && getavg1 !== 0) {
+            //     this.setState({
+            //         avg1: getavg1
+            //     })
+            // }
+            
+            
+
+        
     }
+
+
 
 
     onSubmit(e) {
@@ -243,7 +272,7 @@ export default class requireSearch extends Component {
             avg11: this.state.avg11,
             avg12: this.state.avg12,
         }
-        
+
 
         this.props.history.push({
             pathname: '/croprisk/display',
@@ -255,8 +284,6 @@ export default class requireSearch extends Component {
     render() {
         return (
             <div style={{ "margin": "2% 30%" }}>
-                <h1>test: {this.state.avg1}</h1>
-
                 <h1>test: {this.state.avg5}</h1>
                 <form onSubmit={this.onSubmit} >
                     <div className="input-group mb-3">
