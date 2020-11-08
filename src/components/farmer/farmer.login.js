@@ -5,7 +5,9 @@ import style from './register.module.css';
 import logo from '../../Image/Agrolly/Agrolly logo.png'
 import Alert from '../layout/alerts'
 
-export default class UserLogin extends Component {
+import { withTranslation } from 'react-i18next';
+
+class UserLogins extends Component {
 
     constructor(props) {
         super(props);
@@ -68,6 +70,7 @@ export default class UserLogin extends Component {
 
 
     render() {
+        const { t } = this.props;
         const message = this.state.errorMessage
         const alert = <Alert message={message} />
         return (
@@ -92,7 +95,7 @@ export default class UserLogin extends Component {
                     </div>
                     {alert}
                     <div className="form-group">
-                        <input type="submit" value="login"
+                        <input type="submit" value={t('login.1')}
                             className="btn btn-primary" />
                     </div>
 
@@ -106,3 +109,7 @@ export default class UserLogin extends Component {
         );
     }
 }
+
+const UserLogin = withTranslation()(UserLogins)
+
+export default UserLogin

@@ -1,0 +1,39 @@
+{
+    "submit":{
+        "1":"Submit"
+    },
+    "edit":{
+        "1":"Edit"
+    },
+    "about":{
+        "1":"About"
+    },
+    "shop":{
+        "1":"Shop"
+    },
+    "login":{
+        "1":"Login"
+    },
+    "sell":{
+        "1":"Sell"
+    },
+    "home":{
+        "1":"Home"
+    },
+    "cropRisk":{
+        "1":"Crop risk"
+    },
+    "weather":{
+        "1":"Weather"
+    },
+    "forum":{
+        "1":"Forum"
+    },
+    "profile":{
+        "1":"profile"
+    },
+    "logout":{
+        "1":"Logout"
+    }
+
+}
