@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+import style from './riskpage.module.css'
 
 export default class VegetableCard extends Component {
 
@@ -29,6 +29,20 @@ export default class VegetableCard extends Component {
             avg10: props.avg10,
             avg11: props.avg11,
             avg12: props.avg12,
+
+            rainfall1: props.rainfall1,
+            rainfall2: props.rainfall2,
+            rainfall3: props.rainfall3,
+            rainfall4: props.rainfall4,
+            rainfall5: props.rainfall5,
+            rainfall6: props.rainfall6,
+            rainfall7: props.rainfall7,
+            rainfall8: props.rainfall8,
+            rainfall9: props.rainfall9,
+            rainfall10: props.rainfall10,
+            rainfall11: props.rainfall11,
+            rainfall12: props.rainfall12,
+
             selectMount:props.selectMount,
             placedata:props.placedata,
             citydata: props.citydata,
@@ -43,11 +57,14 @@ export default class VegetableCard extends Component {
     ETCrop() {
         let mountparam = this.GetplaceMonth(this.state.selectMount)
         const startmonth = "avg"+this.state.selectMount
+        const rainmonth = "rainfall"+ this.state.selectMount
+        const predictrain = this.state[rainmonth]
         const avaragetemp = this.state[startmonth]
-        console.log(startmonth)
         const vegedata = this.state.kc_month1   
         const Irrigation = (mountparam * (0.46 * avaragetemp + 8) * vegedata) * 30
-        return Math.floor(Irrigation)
+        // if(Irrigation<predictrain)
+        {/* <div style={ Irrigation<predictrain ? { backgroundColor:'green'} : { backgroundColor:'red'}}>{Math.floor(Irrigation)}</div> */}
+        return <p style={Irrigation>predictrain ? { "background-color": "red" }:{ "background-color": "green" }}>{Math.floor(Irrigation)} |  {predictrain}</p>
     }
 
     ETCropsecond() {
@@ -55,11 +72,13 @@ export default class VegetableCard extends Component {
         if(secondmonth != 12) secondmonth = secondmonth%12
         const mountparam = this.GetplaceMonth(secondmonth)
         const startmonth = "avg"+ secondmonth
+        const rainmonth = "rainfall"+ secondmonth
+        const predictrain = this.state[rainmonth]
         const avaragetemp = this.state[startmonth]
-        console.log(startmonth)
+        // console.log(startmonth)
         const vegedata = this.state.kc_month.kc_month2 
         const Irrigation = (mountparam * (0.46 * avaragetemp + 8) * vegedata) * 30
-        return Math.floor(Irrigation)
+        return <p style={Irrigation>predictrain ? { "background-color": "red" }:{ "background-color": "green" }}>{Math.floor(Irrigation)} |  {predictrain}</p>
     }
 
     ETCropThire() {
@@ -67,12 +86,14 @@ export default class VegetableCard extends Component {
         if(thiremonth != 12) thiremonth = thiremonth%12
         const mountparam = this.GetplaceMonth(thiremonth)
         const startmonth = "avg"+thiremonth
+        const rainmonth = "rainfall"+ thiremonth
+        const predictrain = this.state[rainmonth]
         const avaragetemp = this.state[startmonth]
-        console.log(startmonth)
+        // console.log(startmonth)
         const vegedata = this.state.kc_month.kc_month3 
         const Irrigation = (mountparam * (0.46 * avaragetemp + 8) * vegedata) * 30
         if(Irrigation !== 0){
-            return Math.floor(Irrigation)
+            return <p style={Irrigation>predictrain ? { "background-color": "red" }:{ "background-color": "green" }}>{Math.floor(Irrigation)} |  {predictrain}</p>
         }else{
             return null
         }
@@ -83,12 +104,14 @@ export default class VegetableCard extends Component {
         if(fourmonth != 12) fourmonth = fourmonth%12
         const mountparam = this.GetplaceMonth(fourmonth)
         const startmonth = "avg"+fourmonth
+        const rainmonth = "rainfall"+ fourmonth
+        const predictrain = this.state[rainmonth]
         const avaragetemp = this.state[startmonth]
-        console.log(startmonth)
+        // console.log(startmonth)
         const vegedata = this.state.kc_month.kc_month4
         const Irrigation = (mountparam * (0.46 * avaragetemp + 8) * vegedata) * 30
         if(Irrigation !== 0){
-            return Math.floor(Irrigation)
+            return <p style={Irrigation>predictrain ? { "background-color": "red" }:{ "background-color": "green" }}>{Math.floor(Irrigation)} |  {predictrain}</p>
         }else{
             return null
         }
@@ -100,12 +123,14 @@ export default class VegetableCard extends Component {
         if(fivemonth != 12) fivemonth = fivemonth%12
         const mountparam = this.GetplaceMonth(fivemonth)
         const startmonth = "avg"+fivemonth
+        const rainmonth = "rainfall"+ fivemonth
+        const predictrain = this.state[rainmonth]
         const avaragetemp = this.state[startmonth]
-        console.log(startmonth)
+        // console.log(startmonth)
         const vegedata = this.state.kc_month.kc_month5
         const Irrigation = (mountparam * (0.46 * avaragetemp + 8) * vegedata) * 30
         if(Irrigation !== 0){
-            return Math.floor(Irrigation)
+            return<p style={Irrigation>predictrain ? { "background-color": "red" }:{ "background-color": "green" }}>{Math.floor(Irrigation)} |  {predictrain}</p>
         }else{
             return null
         }
@@ -117,12 +142,14 @@ export default class VegetableCard extends Component {
         if(sixmonth != 12) sixmonth = sixmonth%12
         const mountparam = this.GetplaceMonth(sixmonth)
         const startmonth = "avg"+sixmonth
+        const rainmonth = "rainfall"+ sixmonth
+        const predictrain = this.state[rainmonth]
         const avaragetemp = this.state[startmonth]
-        console.log(startmonth)
+        // console.log(startmonth)
         const vegedata = this.state.kc_month.kc_month6
         const Irrigation = (mountparam * (0.46 * avaragetemp + 8) * vegedata) * 30
         if(Irrigation !== 0){
-            return Math.floor(Irrigation)
+            return <p style={Irrigation>predictrain ? { "background-color": "red" }:{ "background-color": "green" }}>{Math.floor(Irrigation)} |  {predictrain}</p>
         }else{
             return null
         }
@@ -133,12 +160,14 @@ export default class VegetableCard extends Component {
         if(sevenmonth != 12) sevenmonth = sevenmonth%12
         const mountparam = this.GetplaceMonth(sevenmonth)
         const startmonth = "avg"+sevenmonth
+        const rainmonth = "rainfall"+ sevenmonth
+        const predictrain = this.state[rainmonth]
         const avaragetemp = this.state[startmonth]
-        console.log(startmonth)
+        // console.log(startmonth)
         const vegedata = this.state.kc_month.kc_month7
         const Irrigation = (mountparam * (0.46 * avaragetemp + 8) * vegedata) * 30
         if(Irrigation !== 0){
-            return Math.floor(Irrigation)
+            return <p style={Irrigation>predictrain ? { "background-color": "red" }:{ "background-color": "green" }}>{Math.floor(Irrigation)} |  {predictrain}</p>
         }else{
             return null
         }
@@ -149,12 +178,15 @@ export default class VegetableCard extends Component {
         if(eightmonth != 12) eightmonth = eightmonth%12
         const mountparam = this.GetplaceMonth(eightmonth)
         const startmonth = "avg"+eightmonth
+        const rainmonth = "rainfall"+ eightmonth
+        const predictrain = this.state[rainmonth]
+        console.log(rainmonth)
         const avaragetemp = this.state[startmonth]
-        console.log(startmonth)
+        // console.log(startmonth)
         const vegedata = this.state.kc_month.kc_month8
         const Irrigation = (mountparam * (0.46 * avaragetemp + 8) * vegedata) * 30
         if(Irrigation !== 0){
-            return Math.floor(Irrigation)
+            return <p style={Irrigation>predictrain ? { "background-color": "red" }:{ "background-color": "green" }}>{Math.floor(Irrigation)} |  {predictrain}</p>
         }else{
             return null
         }
@@ -165,12 +197,14 @@ export default class VegetableCard extends Component {
         if(ninemonth != 12) ninemonth = ninemonth%12
         const mountparam = this.GetplaceMonth(ninemonth)
         const startmonth = "avg"+ninemonth
+        const rainmonth = "rainfall"+ ninemonth
+        const predictrain = this.state[rainmonth]
         const avaragetemp = this.state[startmonth]
-        console.log(startmonth)
+        // console.log(startmonth)
         const vegedata = this.state.kc_month.kc_month9
         const Irrigation = (mountparam * (0.46 * avaragetemp + 8) * vegedata) * 30
         if(Irrigation !== 0){
-            return Math.floor(Irrigation)
+            return <p style={Irrigation>predictrain ? { "background-color": "red" }:{ "background-color": "green" }}>{Math.floor(Irrigation)} |  {predictrain}</p>
         }else{
             return null
         }
@@ -181,12 +215,14 @@ export default class VegetableCard extends Component {
         if(Tenmonth != 12) Tenmonth = Tenmonth%12
         const mountparam = this.GetplaceMonth(Tenmonth)
         const startmonth = "avg"+Tenmonth
+        const rainmonth = "rainfall"+ Tenmonth
+        const predictrain = this.state[rainmonth]
         const avaragetemp = this.state[startmonth]
-        console.log(startmonth)
+        // console.log(startmonth)
         const vegedata = this.state.kc_month.kc_month10
         const Irrigation = (mountparam * (0.46 * avaragetemp + 8) * vegedata) * 30
         if(Irrigation !== 0){
-            return Math.floor(Irrigation)
+            return <p style={Irrigation>predictrain ? { "background-color": "red" }:{ "background-color": "green" }}>{Math.floor(Irrigation)} |  {predictrain}</p>
         }else{
             return null
         }
@@ -197,12 +233,14 @@ export default class VegetableCard extends Component {
         if(elevenmonth != 12) elevenmonth = elevenmonth%12
         const mountparam = this.GetplaceMonth(elevenmonth)
         const startmonth = "avg"+elevenmonth
+        const rainmonth = "rainfall"+ elevenmonth
+        const predictrain = this.state[rainmonth]
         const avaragetemp = this.state[startmonth]
-        console.log(startmonth)
+        // console.log(startmonth)
         const vegedata = this.state.kc_month.kc_month11
         const Irrigation = (mountparam * (0.46 * avaragetemp + 8) * vegedata) * 30
         if(Irrigation !== 0){
-            return Math.floor(Irrigation)
+            return <p style={Irrigation>predictrain ? { "background-color": "red" }:{ "background-color": "green" }}>{Math.floor(Irrigation)} |{predictrain}</p>
         }else{
             return null
         }
@@ -213,12 +251,14 @@ export default class VegetableCard extends Component {
         if(twelvemonth != 12) twelvemonth = twelvemonth%12
         const mountparam = this.GetplaceMonth(twelvemonth)
         const startmonth = "avg"+twelvemonth
+        const rainmonth = "rainfall"+ twelvemonth
+        const predictrain = this.state[rainmonth]
         const avaragetemp = this.state[startmonth]
-        console.log(startmonth)
+        // console.log(startmonth)
         const vegedata = this.state.kc_month.kc_month12
         const Irrigation = (mountparam * (0.46 * avaragetemp + 8) * vegedata) * 30
         if(Irrigation !== 0){
-            return Math.floor(Irrigation)
+            return <p style={Irrigation>predictrain ? { "background-color": "red" }:{ "background-color": "green" }}>{Math.floor(Irrigation)} |  {predictrain}</p>
         }else{
             return null
         }
@@ -234,14 +274,9 @@ export default class VegetableCard extends Component {
     }
 
 
-
-    // ET crop selected month=   (pplace+month // selected the month and find in the long  (0.46 T2M selected month/place   // annual weather focast + 8) × Kccrop/1st number. //kc_month1: 0.45 for the first mont  (mm/day))*30
-
-
-
     render() {
         return (
-            <div>
+            <div className ={style.vegetableCard}>
                 <h5>{this.state.crop_name} | {this.state.Crop_Portuguese_name} | {this.state.Crop_Mongolian_name}</h5>
                 <p>possible tolerant temperature: {this.state.Min_temp}.C~{this.state.Max_temp}.C </p>
                 <p>growing Period: {this.state.growPeriod_Min}~{this.state.growPeriod_Max}</p>

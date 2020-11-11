@@ -45,7 +45,7 @@ function ChatCard(props) {
         <div className = {style.myQuestionCardstyle}>
             {/* {checkID()} */}
             {questiondelete}
-            <Link style={{"text-decoration": "none"}}  to={"/forum/joinchat/" + props.chat.id}>          
+            <Link style={{"textDecoration": "none"}}  to={"/forum/joinchat/" + props.chat.id}>          
                 <p className={style.questiontext}>{props.chat.question}</p>
                 <p className={style.questionInfo} >{props.chat.name} | {props.chat.state} |{props.chat.date}</p>     
             </Link>

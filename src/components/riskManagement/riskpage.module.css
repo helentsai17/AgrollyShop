@@ -1,0 +1,15 @@
+.riskbackground{
+    background-image: url('../../Image/background/wheat.jpeg');
+    min-height: 100%; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.vegetableCard{
+    border: solid;
+    border-color: gray;
+    background-color: #fff;
+    margin: 1% 20%;
+    border-radius: 10px;
+}
