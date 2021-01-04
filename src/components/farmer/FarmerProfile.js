@@ -32,8 +32,8 @@ export default class FarmerProfile extends Component {
         return (
             <div>
                 <div className = {style.ProfileCard}>
-                    <span className ={style.ProfileNameText}>Your Profile</span> <a href='/farmer/profileEdit' className = {style.aTagEdit}> edit</a>
-                    <h3>{this.state.name}</h3>
+                   
+                    <h3>{this.state.name} <a href='/farmer/profileEdit' className = {style.aTagEdit}> edit</a></h3>
                     <hr />
                     <h5>Account Email</h5>
                     <p>{this.state.user}</p>
@@ -45,8 +45,7 @@ export default class FarmerProfile extends Component {
                     <p>{this.state.state} </p>
                     <hr />
                     <h5>City</h5>
-                    <p>{this.state.city} </p>
-                    
+                    <p>{this.state.city} </p>          
                 </div>
             </div>
         )

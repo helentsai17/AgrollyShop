@@ -64,7 +64,7 @@ export default class VegetableCard extends Component {
         const Irrigation = (mountparam * (0.46 * avaragetemp + 8) * vegedata) * 30
         // if(Irrigation<predictrain)
         {/* <div style={ Irrigation<predictrain ? { backgroundColor:'green'} : { backgroundColor:'red'}}>{Math.floor(Irrigation)}</div> */}
-        return <p style={Irrigation>predictrain ? { "background-color": "red" }:{ "background-color": "green" }}>{Math.floor(Irrigation)} |  {predictrain}</p>
+        return <p style={Irrigation>predictrain ? { "backgroundColor": "red" }:{ "backgroundColor": "green" }}>{Math.floor(Irrigation)} |  {predictrain}</p>
     }
 
     ETCropsecond() {
@@ -78,7 +78,7 @@ export default class VegetableCard extends Component {
         // console.log(startmonth)
         const vegedata = this.state.kc_month.kc_month2 
         const Irrigation = (mountparam * (0.46 * avaragetemp + 8) * vegedata) * 30
-        return <p style={Irrigation>predictrain ? { "background-color": "red" }:{ "background-color": "green" }}>{Math.floor(Irrigation)} |  {predictrain}</p>
+        return <p style={Irrigation>predictrain ? { "backgroundColor": "red" }:{ "backgroundColor": "green" }}>{Math.floor(Irrigation)} |  {predictrain}</p>
     }
 
     ETCropThire() {
@@ -93,7 +93,7 @@ export default class VegetableCard extends Component {
         const vegedata = this.state.kc_month.kc_month3 
         const Irrigation = (mountparam * (0.46 * avaragetemp + 8) * vegedata) * 30
         if(Irrigation !== 0){
-            return <p style={Irrigation>predictrain ? { "background-color": "red" }:{ "background-color": "green" }}>{Math.floor(Irrigation)} |  {predictrain}</p>
+            return <p style={Irrigation>predictrain ? { "backgroundColor": "red" }:{ "backgroundColor": "green" }}>{Math.floor(Irrigation)} |  {predictrain}</p>
         }else{
             return null
         }
@@ -111,7 +111,7 @@ export default class VegetableCard extends Component {
         const vegedata = this.state.kc_month.kc_month4
         const Irrigation = (mountparam * (0.46 * avaragetemp + 8) * vegedata) * 30
         if(Irrigation !== 0){
-            return <p style={Irrigation>predictrain ? { "background-color": "red" }:{ "background-color": "green" }}>{Math.floor(Irrigation)} |  {predictrain}</p>
+            return <p style={Irrigation>predictrain ? { "backgroundColor": "red" }:{ "backgroundColor": "green" }}>{Math.floor(Irrigation)} |  {predictrain}</p>
         }else{
             return null
         }
@@ -130,7 +130,7 @@ export default class VegetableCard extends Component {
         const vegedata = this.state.kc_month.kc_month5
         const Irrigation = (mountparam * (0.46 * avaragetemp + 8) * vegedata) * 30
         if(Irrigation !== 0){
-            return<p style={Irrigation>predictrain ? { "background-color": "red" }:{ "background-color": "green" }}>{Math.floor(Irrigation)} |  {predictrain}</p>
+            return<p style={Irrigation>predictrain ? { "backgroundColor": "red" }:{ "backgroundColor": "green" }}>{Math.floor(Irrigation)} |  {predictrain}</p>
         }else{
             return null
         }
@@ -149,7 +149,7 @@ export default class VegetableCard extends Component {
         const vegedata = this.state.kc_month.kc_month6
         const Irrigation = (mountparam * (0.46 * avaragetemp + 8) * vegedata) * 30
         if(Irrigation !== 0){
-            return <p style={Irrigation>predictrain ? { "background-color": "red" }:{ "background-color": "green" }}>{Math.floor(Irrigation)} |  {predictrain}</p>
+            return <p style={Irrigation>predictrain ? { "backgroundColor": "red" }:{ "backgroundColor": "green" }}>{Math.floor(Irrigation)} |  {predictrain}</p>
         }else{
             return null
         }
@@ -167,7 +167,7 @@ export default class VegetableCard extends Component {
         const vegedata = this.state.kc_month.kc_month7
         const Irrigation = (mountparam * (0.46 * avaragetemp + 8) * vegedata) * 30
         if(Irrigation !== 0){
-            return <p style={Irrigation>predictrain ? { "background-color": "red" }:{ "background-color": "green" }}>{Math.floor(Irrigation)} |  {predictrain}</p>
+            return <p style={Irrigation>predictrain ? { "backgroundColor": "red" }:{ "backgroundColor": "green" }}>{Math.floor(Irrigation)} |  {predictrain}</p>
         }else{
             return null
         }
@@ -186,7 +186,7 @@ export default class VegetableCard extends Component {
         const vegedata = this.state.kc_month.kc_month8
         const Irrigation = (mountparam * (0.46 * avaragetemp + 8) * vegedata) * 30
         if(Irrigation !== 0){
-            return <p style={Irrigation>predictrain ? { "background-color": "red" }:{ "background-color": "green" }}>{Math.floor(Irrigation)} |  {predictrain}</p>
+            return <p style={Irrigation>predictrain ? { "backgroundColor": "red" }:{ "backgroundColor": "green" }}>{Math.floor(Irrigation)} |  {predictrain}</p>
         }else{
             return null
         }
@@ -204,7 +204,7 @@ export default class VegetableCard extends Component {
         const vegedata = this.state.kc_month.kc_month9
         const Irrigation = (mountparam * (0.46 * avaragetemp + 8) * vegedata) * 30
         if(Irrigation !== 0){
-            return <p style={Irrigation>predictrain ? { "background-color": "red" }:{ "background-color": "green" }}>{Math.floor(Irrigation)} |  {predictrain}</p>
+            return <p style={Irrigation>predictrain ? { "backgroundColor": "red" }:{ "backgroundColor": "green" }}>{Math.floor(Irrigation)} |  {predictrain}</p>
         }else{
             return null
         }
@@ -222,7 +222,7 @@ export default class VegetableCard extends Component {
         const vegedata = this.state.kc_month.kc_month10
         const Irrigation = (mountparam * (0.46 * avaragetemp + 8) * vegedata) * 30
         if(Irrigation !== 0){
-            return <p style={Irrigation>predictrain ? { "background-color": "red" }:{ "background-color": "green" }}>{Math.floor(Irrigation)} |  {predictrain}</p>
+            return <p style={Irrigation>predictrain ? { "backgroundColor": "red" }:{ "backgroundColor": "green" }}>{Math.floor(Irrigation)} |  {predictrain}</p>
         }else{
             return null
         }
@@ -240,7 +240,7 @@ export default class VegetableCard extends Component {
         const vegedata = this.state.kc_month.kc_month11
         const Irrigation = (mountparam * (0.46 * avaragetemp + 8) * vegedata) * 30
         if(Irrigation !== 0){
-            return <p style={Irrigation>predictrain ? { "background-color": "red" }:{ "background-color": "green" }}>{Math.floor(Irrigation)} |{predictrain}</p>
+            return <p style={Irrigation>predictrain ? { "backgroundColor": "red" }:{ "backgroundColor": "green" }}>{Math.floor(Irrigation)} |{predictrain}</p>
         }else{
             return null
         }
@@ -258,7 +258,7 @@ export default class VegetableCard extends Component {
         const vegedata = this.state.kc_month.kc_month12
         const Irrigation = (mountparam * (0.46 * avaragetemp + 8) * vegedata) * 30
         if(Irrigation !== 0){
-            return <p style={Irrigation>predictrain ? { "background-color": "red" }:{ "background-color": "green" }}>{Math.floor(Irrigation)} |  {predictrain}</p>
+            return <p style={Irrigation>predictrain ? { "backgroundColor": "red" }:{ "backgroundColor": "green" }}>{Math.floor(Irrigation)} |  {predictrain}</p>
         }else{
             return null
         }

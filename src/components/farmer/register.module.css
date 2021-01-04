@@ -35,19 +35,24 @@
     
 }
 
+
+/* FarmerProfile Page  */
+/* .ProfileBackground{
+
+} */
 .ProfileCard{
     margin: 3% auto;
     max-width: 50%;
-}
-
-.ProfileNameText{
-    font-size: 35px;
-    /* margin-bottom: 50px; */
+    border: 2px solid;
+    border-radius: 25px;
+    border-color: rgb(160,160,160,0.6);
+    padding: 3% 5%;
 }
 
 .aTagEdit{
-    margin-left: 50%;
     color: blue;
+    float: right;
+    font-size: medium;
 }
 
 .infoButton{

@@ -1,19 +1,13 @@
 import React, { Component } from 'react';
 import style from './homepageOld.module.css';
 
-import Ajinkya from '../../Image/us/Ajinkya Photo.jpeg'
-import Manoela from '../../Image/us/Manoela Photo.jpg'
-import Chimka from '../../Image/us/Chimegsaikhan Munkhbayar.jpg'
-import Helen from '../../Image/us/Helen.jpeg'
+
 import phoneimage from '../../Image/phoneImage/phoneimg.png'
+import codeForCode from '../../Image/partner/2020_callforcode_logo.png'
+import BgovermentLogo from '../../Image/partner/Bazil goverment logo.png'
+import CampoLogo from '../../Image/partner/campo_real_logo.png'
 
-import watson from '../../Image/icon/IBM watson.png'
-import IBMdata from '../../Image/icon/IBM database.png'
-import cordova from '../../Image/icon/cordova_logo.png'
-import Ionic from '../../Image/icon/Ionic.png'
-import Rlogo from '../../Image/icon/R_logo.png'
-
-import Footer from '../../components/footer'
+import Footer from '../footer/footer'
 
 
 export default class homePageOld extends Component {
@@ -99,66 +93,15 @@ export default class homePageOld extends Component {
                     </div>
                 </section>
 
-                {/* about us */}
-                <section id={style.whoWeAre}>
-                    <div className="row">
-                        <div className={`col-md-3 ${style.cardView}`}>
-                            <img src={Manoela} className={style.projectImage} alt="Manoela" />
-                            <div>
-                                <p className="name-text"> Manoela Morais</p>
-                                <p className="title-text">CEO</p>
-                                <p className="info-text">BS in Chemical Engineering, MBA in Business. MS in Automation and MS in Financial Risk Management. Certified PMP, SCOR-P, APICS and Six Sigma.</p>
-                                <a href="https://www.linkedin.com/in/ajinkya-datalkar/">
-                                    <i className="fab fa-linkedin fa-2x linkicon"></i></a>
-                            </div>
-                        </div>
-                        <div className={`col-md-3 ${style.cardView}`}>
-                            <img src={Ajinkya} className={style.projectImage} alt="Ajinkya" />
-                            <div>
-                                <p className="name-text"> Ajinkya Datalkar</p>
-                                <p className="title-text">CTO</p>
-                                <p className="info-text">Bachelor of Engineering in Electronics & Telecommunication and MS in Computer Science. Specialized in C++, PHP, Javascript, AJAX, MSQL.</p>
-                                <a href="https://www.linkedin.com/in/ajinkya-datalkar/">
-                                    <i className="fab fa-linkedin fa-2x linkicon"></i></a>
-                            </div>
-                        </div>
-                        <div className={`col-md-3 ${style.cardView}`}>
-                            <img src={Chimka} className={style.projectImage} alt="Chimegsaikhan" />
-                            <div>
-                                <p className="name-text">Chimka Munkhbayar</p>
-                                <p className="title-text">Asia Head of Sales & Marketing</p>
-                                <p className="info-text">BA in Informatics and MBA in Entrepreneurship. Fulbright scholar 2018-2020.</p>
-                                <a href="https://www.linkedin.com/in/chimka-munkhbayar-0ab421b5/"><i
-                                    className="fab fa-linkedin fa-2x linkicon"></i></a>
-                            </div>
-                        </div>
-                        <div className={`col-md-3 ${style.cardView}`}>
-
-                            <img src={Helen} className={style.projectImage} alt="Helen" />
-                            <div >
-                                <p className="name-text">Helen Tsai</p>
-                                <p className="title-text">Web developer Lead</p>
-                                <p className="info-text">Master in computer science, AIOT and Software developer intern in Mitac Taiwan, Specialized in Java, Javascript, C#, MySQL, MongoDB and node.js</p>
-                                <a href="https://www.linkedin.com/in/helen-tsai-teyi/"><i
-                                    className="fab fa-linkedin fa-2x linkicon"></i></a>
-
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                {/* use tech */}
-                <section id={style.useTech}>
+                <section className={style.partnership}>
                     <div>
-                        <img height="110px" src={watson} alt="IBM watson" />
-                        <img height="110px" src={IBMdata} alt="IBM Database" />
-                        <img height="110px" src={cordova} alt="cordova" />
-                        <img height="110px" src={Ionic} alt="Ionic" />
-                        <img height="110px" src={Rlogo} alt="R" />
-
+                        <img className={style.partnerImage} height="110px" src={codeForCode} alt="2020 call for code" />
+                        <img className={style.partnerImage} height="110px" src={BgovermentLogo} alt="Bazil goverment logo" />
+                        <img className={style.partnerImage} height="110px" src={CampoLogo} alt="campo real" />
                     </div>
                 </section>
 
-                <Footer/>
+                <Footer />
 
             </div>
         )

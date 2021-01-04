@@ -1,0 +1,71 @@
+.ourStory{
+    margin:2% 15%;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-area: 
+        "image story";
+ 
+}
+
+.ourStoryImg{
+    grid-area: "image";
+    width: 400px;
+    
+}
+
+.ourStoryText{
+    grid-area: "story";
+}
+
+/* ourTeam page */
+#whoWeAre{
+    padding: 2% 15%;
+    background-color:#BAF2B6;
+}
+
+.titles{
+    text-align: center;
+    margin:10px;
+}
+
+.memberContainer{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 2fr;
+    grid-area: 
+        "pic explain . pic explain";
+    grid-row-gap:1em;
+}
+
+.personImg{
+    grid-area: "pic";
+}
+.personaContain{
+    grid-area: "explain";
+    padding-top: 15px;
+}
+
+.projectImage{
+    width: 200px;
+    height: 200px;
+    border-radius: 50px;
+    padding:10px;
+}
+
+.nameText{
+    font-weight: bold;
+    color:green;
+    font-size: 20px;
+    margin-bottom: 0;
+    padding-left: 0%;
+}
+.titleText{
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.infoText{
+    font-size: 12px;
+    color: grey;
+    padding-right: 10%;
+    margin-bottom: 0%;
+}

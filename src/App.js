@@ -27,6 +27,8 @@ import weeklyweather from './components/weatherPage/weeklyweather'
 import hourlyweather from './components/weatherPage/hourlyweather'
 import riskpage from './components/riskManagement/riskpage'
 import requiresearch from './components/riskManagement/requireSearch'
+import ourteam from './components/aboutPage/ourTeam'
+import workWithUs from './components/aboutPage/workWithUs'
 import i18next from 'i18next';
 
 function App() {
@@ -54,6 +56,8 @@ function App() {
         </ul>
         <Route path="/" exact component={homePage} />
         <Route path="/shop" exact component={shopper} />
+        <Route path="/our-team" component={ourteam} />
+        <Route path="/work-with-us" component={workWithUs} />
         <Route path="/register" exact component={register} />
         <Route path="/farmer/login" exact component={farmerLogin} />
         <Route path="/farmer/forgetpassword" exact component={forgetPassword} />
@@ -80,6 +84,7 @@ function App() {
 
 
 
+        <Route path="/about/technology" exact component={technology} />
         <Route path="/about/technology" exact component={technology} />
       </Router>
     </div>

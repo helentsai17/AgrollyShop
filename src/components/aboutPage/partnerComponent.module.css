@@ -1,0 +1,89 @@
+
+/*--------------------------------------------------------------
+Partner Cards:
+--------------------------------------------------------------*/
+
+.cards {
+	padding: 0;
+    list-style-type: none;
+	/* display: grid; */
+	/* grid-template-columns: repeat(2, 1fr); */
+}
+
+.cards a {
+	display: block;
+	text-decoration: none;
+}
+
+.partnerImg{
+	display: block;
+	border: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.caption {
+	padding: 1em;
+	background: hsla(246, 40%, 30%, .2);
+	color: white;
+	font-size: 1.2em;
+	transition: all .4s;
+	display: flex;
+	align-items: flex-end;
+	opacity: 0;
+}
+
+a:focus .caption,
+a:hover .caption {
+	background: hsla(246, 40%, 30%, 0.9);
+	opacity: 1;
+}
+
+.captionTitle {
+	margin: 0;
+	font-size: 1.4em;
+	line-height: 1.1em;
+	
+}
+
+.card{
+	display: grid;
+}
+
+.card img,
+.caption{
+    grid-row: 1;
+    grid-column: 1;
+}
+
+/*--------------------------------------------------------------
+CSS Grid layout for wider screens, when browser supports grid:
+--------------------------------------------------------------*/
+
+@supports (grid-area: auto) {
+
+	@media screen and (min-width: 60em) {
+
+		.cards {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap: 1em;
+		}
+
+		.cards a {
+			margin-bottom: 0;
+		}
+
+		.card{
+			display: grid;
+		}
+
+		.card img,
+		.caption{
+    		grid-row: 1;
+    		grid-column: 1;
+	}
+
+	}
+
+}
