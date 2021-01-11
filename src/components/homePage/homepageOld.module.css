@@ -132,5 +132,9 @@
 
 .agrollyDescription{
   background-color: #FBD87A;
-  padding: 3% 15%;
+  padding: 5% 15%;
+}
+
+.agrollyAffiliates{
+  margin:3%
 }

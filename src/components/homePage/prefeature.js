@@ -1,7 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 import style from './Prefeature.module.css'
-import $ from "jquery"
+
 
 
 export default class prefeature extends Component {
@@ -12,7 +12,7 @@ export default class prefeature extends Component {
                     <li tabindex="1">
                         <div>
                             <a href="#">
-                                <h2>Lorem Ipsum</h2>
+                                <h2>Annual Data Prodiction</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                             </a>
                         </div>
@@ -20,7 +20,7 @@ export default class prefeature extends Component {
                     <li tabindex="2">
                         <div>
                             <a href="#">
-                                <h2>Lorem Ipsum</h2>
+                                <h2>Crop Plantting Sugguestion</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                             </a>
                         </div>
@@ -28,7 +28,7 @@ export default class prefeature extends Component {
                     <li tabindex="3">
                         <div>
                             <a href="#">
-                                <h2>Lorem Ipsum</h2>
+                                <h2>Farmer Forum</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                             </a>
                         </div>

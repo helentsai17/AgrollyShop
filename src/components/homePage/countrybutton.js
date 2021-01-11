@@ -3,17 +3,19 @@ import style from './countrybutton.module.css'
 
 
 function countryButton(props) {
-    const partner1 = require('../../Image/partnerImage/partner1.png')
-    const partner2 = require('../../Image/partnerImage/partner2.png')
+    const Mongolia = require('../../Image/Country/Mongolia.png')
+    const Brazil = require('../../Image/Country/Brazil.png')
+    const India = require('../../Image/Country/India.png')
+    const Taiwan = require('../../Image/Country/Taiwan.png')
     return (
         <div >
             <ul className={style.cards}>
-                <li figure className={style.card}>
-                    <a href="#">
+                <li >
+                    <a href="">
                         <figure className={style.card}>
-                            <img className={style.partnerImg} src={partner1} alt="Lines on a tropical leaf." />
+                            <img className={style.partnerImg} src={Mongolia} alt="" />
                             <figcaption className={style.caption}>
-                                <h3 class={style.captionTitle}>Mongolian</h3>
+                                <h3 className={style.partnerTitle}>Mongolia</h3>
                             </figcaption>
                         </figure>
                     </a>
@@ -21,7 +23,7 @@ function countryButton(props) {
                 <li >
                     <a href="">
                         <figure className={style.card}>
-                            <img className={style.partnerImg} src={partner2} alt="" />
+                            <img className={style.partnerImg} src={Brazil} alt="" />
                             <figcaption className={style.caption}>
                                 <h3 className={style.partnerTitle}>Barzil</h3>
                             </figcaption>
@@ -31,7 +33,7 @@ function countryButton(props) {
                 <li >
                     <a href="">
                         <figure className={style.card}>
-                            <img className={style.partnerImg} src={partner2} alt="" />
+                            <img className={style.partnerImg} src={India} alt="" />
                             <figcaption className={style.caption}>
                                 <h3 className={style.partnerTitle}>India</h3>
                             </figcaption>
@@ -41,7 +43,7 @@ function countryButton(props) {
                 <li >
                     <a href="#">
                         <figure className={style.card}>
-                            <img className={style.partnerImg} src={partner1} alt="Lines on a tropical leaf." />
+                            <img className={style.partnerImg} src={Taiwan} alt="Lines on a tropical leaf." />
                             <figcaption className={style.caption}>
                                 <h3 class={style.captionTitle}>Taiwan</h3>
                             </figcaption>

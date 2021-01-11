@@ -8,8 +8,9 @@ import BgovermentLogo from '../../Image/partner/Bazil goverment logo.png'
 import CampoLogo from '../../Image/partner/campo_real_logo.png'
 
 import Footer from '../footer/footer'
-import Feature from '../aboutPage/prefeature'
+import Feature from './prefeature'
 import CountryButoon from './countrybutton'
+import News from './agrollynews'
 
 
 export default class homePageOld extends Component {
@@ -33,24 +34,22 @@ export default class homePageOld extends Component {
                                     window.location.href = 'https://www.youtube.com/watch?v=VT4RKHwQ1hQ&feature=youtu.be';
                                 }}><i className="fas fa-film"></i> Video</button>
                         </div>
-                        <div className={`col-md-6 ${style.imagediv}`}>
-                            <img className={style.cellphoneimg} src={phoneimage} alt="our app"></img>
-                        </div>
                     </div>
                 </section>
 
-                <section>
-                    <h1>Agrolly Affiliates</h1>
+                <section className={style.agrollyAffiliates}>
+                    <h3>Agrolly Affiliates</h3>
                     <CountryButoon/>
                 </section>
 
                 <section className={style.agrollyDescription}>
-                    <h1>what is agrolly</h1>
+                    <h3>what is agrolly</h3>
                     <p>Agrolly is a solution that help Rural household farmers to fight climate change, it private information and technology for farmer to handle risk, gaining farming knowledge and get to know others.  Agrolly provide open source solution and local connection to the country.</p>
                 </section>
 
                 <section className={style.news}>
                     <h1>we put the news here</h1>
+                    <News/>
                 </section>
 
                 <Feature/>

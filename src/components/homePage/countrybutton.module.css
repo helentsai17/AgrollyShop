@@ -11,7 +11,8 @@ Partner Cards:
 
 .cards a {
 	display: block;
-	text-decoration: none;
+    text-decoration: none;
+    padding: 10px;
 }
 
 .partnerImg{
@@ -23,7 +24,7 @@ Partner Cards:
 
 .caption {
 	padding: 1em;
-	background: hsla(246, 40%, 30%, .2);
+	background: rgba(93, 93, 93, 0.2);
 	color: white;
 	font-size: 1.2em;
 	transition: all .4s;
@@ -34,7 +35,7 @@ Partner Cards:
 
 a:focus .caption,
 a:hover .caption {
-	background: hsla(246, 40%, 30%, 0.9);
+	background :rgba(93, 93, 93, 0.9);
 	opacity: 1;
 }
 
@@ -46,7 +47,8 @@ a:hover .caption {
 }
 
 .card{
-	display: grid;
+    display: grid;
+    border-radius: 5%;
 }
 
 .card img,
