@@ -1,140 +1,53 @@
-    
-    
 /* title area */
-.title{
+.cover{
   background-image: url('https://images.unsplash.com/photo-1519897831810-a9a01aceccd1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80');
   background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-position: -180px;
-    Width: 100%;
-    height: 550px; 
+  background-attachment: scroll;
+  background-position: -180px;
+  Width: 100vw;
+  height: 550px; 
+  /* padding:60px 20px; */
 }
     
-    .titletext{
-      padding: 10% 7%;
-      font-weight: 700;
-      color: #fff;
-      text-shadow: 2px 2px #6e6e6e;
-      font-style: italic;
-    }
-  
-    .googlebtn{
-      margin-top: 10%;
-      margin-right: 2%;
-    }
-  
-    .cellphoneimg{
-      width: 250px;
-      position: absolute;
-      padding-top: 3%;
-    }
-    
-    .imagediv{
-      padding-left: 12%;
-    }
-  
-    /* Mission */
-    #mission{
-      padding: 10% 6% 1% 6%;  
-    }
-  
-    /* what we do */
-    #whatWeDo{
-      padding: 6% 2%;
-      background-color: #fff;
-      position: relative;
-      z-index: 1;
-    }
-.skillBox{
-    padding: 0% 1%;
-    text-align: center;
+.titletext{
+  padding: 10% 7%;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 2px 2px #6e6e6e;
+  font-style: italic;
 }
-    .icon{
-      
-      color: green;
-      margin: 8%;
-    }
-    .iconText{
-      color: gray;
-      font-size: 14px;
-    }
-    .icon:hover{
-      color: #8f8f8f
-    }
-    
-    
   
-  
-     /* contact me */
-     #contact-me{
-      text-align: center;
-      background-color:#BAF2B6;
-      color:#fff;
-      padding:2%;
-      line-height:5px;
-    
-    }
-  
-    .contactme{
-      padding: 1% 10%;
-    }
-  
-    .input-box{
-      margin-bottom: 3%;
-      
-    }
-  
-.soc-icon{
-  width: 30px;
+.googlebtn{
+  margin-top: 10%;
+  margin-right: 2%;
 }
-    
-    
-  
-  #FAQ{
-    text-align: center;
-    padding: 8%;
-    
-  }
-  
-  .questionbtn{
-    width: 100%;
-    padding-top: 10px;
-    text-align: start;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border: none;
-    padding-left: 30px;
-    background-color:#b1b1b1;
-    margin-top: 10px;
-  }
-  
-.answer{
-  font-size: 15pt;
-  text-align: start;
-  padding-left: 30px;
-  background-color:#dbdbdb;
-  padding: 20px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  margin-bottom: 5px;
+
+/* Agrolly Affiliates */
+
+.agrollyAffiliates{
+  margin:3%;
+  text-align: center;
+}
+
+/* What is agrolly */
+
+.agrollyDescription{
+  background-color: #FBD87A;
+  padding: 7% 10%;
+}
+
+
+/* homepage news */
+
+.homepagenews{
+  margin: 3%;
 }
 
 /* partnership section  */
 
-.parterimage{
-  margin: 10px;
+.partnerlogo{
+  margin: 3%;
+  /* text-align: center; */
 }
 
-.partnership{
-  margin: 1% 8% 8% 8%;
-  text-align: center;
-}
 
-.agrollyDescription{
-  background-color: #FBD87A;
-  padding: 5% 15%;
-}
-
-.agrollyAffiliates{
-  margin:3%
-}

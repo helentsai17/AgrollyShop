@@ -1,0 +1,18 @@
+.site{
+    display: grid;
+    grid-template-columns: 1fr 2fr ;
+    grid-template-rows: 1fr ;
+    grid-gap: 1em;
+}
+
+.partnertext{
+    text-align: right;
+    margin-right: 10px;
+    text-decoration: underline;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+.partnerImage{
+    margin: 10px;
+}
