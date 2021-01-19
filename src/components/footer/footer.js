@@ -19,7 +19,8 @@ function Footer(props) {
                     <div >
                         <h5>About</h5>
                         <a href="/our-team">Our Team</a> <br/>
-                        <a href="/work-with-us">Work With Us</a>
+                        <a href="/work-with-us">Work With Us</a><br/>
+                        <a href="/feedback">feedback & contact</a>
                     </div>
                 </section>
 

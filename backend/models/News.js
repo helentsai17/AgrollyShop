@@ -6,7 +6,8 @@ module.exports = db.sequelize.define(
   {
     news_id: {
       type: Sequelize.INTEGER,
-      allowNull: false
+      primaryKey: true,
+      autoIncrement: true
     },
     title:{
         type:Sequelize.STRING
@@ -25,8 +26,8 @@ module.exports = db.sequelize.define(
         type:Sequelize.STRING,
     },
     date:{
-        type: DataTypes.DATE, 
-        defaultValue: DataTypes.NOW
+        type: Sequelize.DATE, 
+        defaultValue: Sequelize.NOW
     }  
   },
   {

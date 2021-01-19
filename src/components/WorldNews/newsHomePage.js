@@ -20,6 +20,7 @@ export default class newsHomePage extends Component {
                         <option value="Agrolly">Agrolly</option>
                     </select>
                 </section>
+                
                 <section>
 
                 </section>

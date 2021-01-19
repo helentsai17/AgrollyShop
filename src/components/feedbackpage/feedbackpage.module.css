@@ -1,0 +1,33 @@
+.feedbackbackground{
+    background-image: url("../../Image/background/wheat.jpeg");
+    padding-top: 3%;
+}
+
+
+.titleContainer{
+    text-align: center;
+    margin: 2%;
+}
+
+.feedbackcontainer{
+    display: grid;
+	grid-template-columns: repeat(2, 1fr);
+    margin: 2% 10%;
+   
+}
+
+.agrollyLogo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoimage{
+    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.feedbackform{
+    padding: 5%
+}

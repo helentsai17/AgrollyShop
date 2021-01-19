@@ -13,11 +13,15 @@ app.use(
   })
 )
 
-var Goods = require('./routes/goods')
+var Goods = require('./routers/Goods')
+var Feedback = require('./routers/Feedbacks')
+var News = require('./routers/News')
 
 
 
 app.use('/goods', Goods)
+app.use('/feedback', Feedback)
+app.use('/news',News)
 
 
 app.listen(port, function () {

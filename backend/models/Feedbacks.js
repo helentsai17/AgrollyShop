@@ -4,9 +4,10 @@ const db = require('../database/db.js')
 module.exports = db.sequelize.define(
   'feedback',
   {
-    fid: {
+    id: {
       type: Sequelize.INTEGER,
-      allowNull: false
+      primaryKey: true,
+      autoIncrement: true
     },
     name:{
         type:Sequelize.STRING
