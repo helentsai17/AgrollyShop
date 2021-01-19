@@ -136,3 +136,10 @@ figure{
 .linkicon{
     color: #0277B5;
 }
+
+.workwithusTitle{
+    text-align: center;
+    background-color: #1D8179;
+    padding :10%;
+    color: white;
+}

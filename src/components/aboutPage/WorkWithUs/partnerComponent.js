@@ -3,8 +3,8 @@ import style from './partnerComponent.module.css'
 
 
 function Partners(props) {
-    const partner1 = require('../../Image/partnerImage/partner1.png')
-    const partner2 = require('../../Image/partnerImage/partner2.png')
+    const partner1 = require('../../../Image/partnerImage/partner1.png')
+    const partner2 = require('../../../Image/partnerImage/partner2.png')
     return (
         <div >
             <ul className={style.cards}>

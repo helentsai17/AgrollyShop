@@ -17,11 +17,8 @@ export default class OurTeam extends Component {
                     <img className={style.ourStoryImg} src="https://3kda485d4m0mmprok50zsd5m-wpengine.netdna-ssl.com/wp-content/uploads/2020/10/hero-video-bg-oct19.png" alt=""/>
                     <div className={style.ourStoryText}>
                     <h3>Our story</h3>
-                    <p >Four individuals come from for different countries and met in New York City while studying in the same university,
-                    2020 four of us join up and get invlove in IBM Call for Code and answer the Call, with the faith of helpping our own
-                    country fighting for climate change we came up with the solution to help local farmer to gain planting knowledge and
-                    making risk management.  Now Agrolly is moving forward to more countries and helping and improving local farmer day by day.
-                </p>
+                    <p >Four individuals come from for different countries with different backgrounds and met in “The New York City” while studying in the same university graduate school they actively join multiple competition and strengthen their skill,  all of them have the same goal is to contribute to their country and the people they love and make the world a better place. </p>
+                    <p>2020 four of them join up and get involve in IBM Call for Code and answer the Call, with the faith of helping their country fighting for climate change they came up with the solution to help local farmer to gain planting knowledge and making risk management. Now Agrolly is moving forward to more countries and helping and improving local farmer day by day.</p>
                 </div>
                 </section>
 

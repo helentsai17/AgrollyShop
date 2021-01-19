@@ -28,8 +28,11 @@ import hourlyweather from './components/weatherPage/hourlyweather'
 import riskpage from './components/riskManagement/riskpage'
 import requiresearch from './components/riskManagement/requireSearch'
 import ourteam from './components/aboutPage/ourTeam'
-import workWithUs from './components/aboutPage/workWithUs'
+import workWithUs from './components/aboutPage/WorkWithUs/workWithUs'
 import i18next from 'i18next';
+import news from './components/WorldNews/newsHomePage'
+import createnews from './components/WorldNews/inputNews'
+import feedback from './components/feedbackpage/feedbackpage'
 
 function App() {
 
@@ -82,7 +85,9 @@ function App() {
         <Route path="/croprisk" exact component={requiresearch} />
         <Route path="/croprisk/display" exact component={riskpage} />
 
-
+        <Route path='/news' component={news}/>
+        <Route path='/createNews' exact component={createnews}/>
+        <Route path='/feedback' exact component={feedback}/>
 
         <Route path="/about/technology" exact component={technology} />
         <Route path="/about/technology" exact component={technology} />

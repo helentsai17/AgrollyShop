@@ -1,0 +1,11 @@
+.site{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin:5% 20%;
+    text-align: center;
+}
+
+.impagecontainer{
+    text-align: center;
+}
+
