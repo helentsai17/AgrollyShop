@@ -20,6 +20,7 @@
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
     "react": "^16.13.1",
+    "react-datepicker": "^3.4.1",
     "react-dom": "^16.13.1",
     "react-google-maps": "^9.4.5",
     "react-i18next": "^11.7.3",

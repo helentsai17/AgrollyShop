@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import NewsComponent from './newsComponent'
+import style from './newsCards.module.css'
 
 export default class newsHomePage extends Component {
 
-    
+
 
     render() {
         return (
@@ -11,7 +13,7 @@ export default class newsHomePage extends Component {
                     <h1>NEWS</h1>
                 </section>
                 <section>
-                    <label for="Country">Country:</label>
+                    <label htmlFor="Country">Country:</label>
                     <select name="Country" id="Country">
                         <option value="Mongolia">Mongolia</option>
                         <option value="Brazil">Brazil</option>
@@ -20,9 +22,9 @@ export default class newsHomePage extends Component {
                         <option value="Agrolly">Agrolly</option>
                     </select>
                 </section>
-                
-                <section>
 
+                <section >
+                    <NewsComponent />
                 </section>
             </div>
         )

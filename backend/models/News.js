@@ -18,6 +18,9 @@ module.exports = db.sequelize.define(
     country:{
         type:Sequelize.STRING
     },
+    city:{
+      type:Sequelize.STRING
+    },
     content:{
         type:Sequelize.STRING,
         allowNull: true
@@ -34,3 +37,5 @@ module.exports = db.sequelize.define(
     timestamps: false
   }
 )
+
+

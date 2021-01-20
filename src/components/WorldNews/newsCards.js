@@ -1,16 +1,14 @@
 import React from 'react';
-
+import style from './newsCards.module.css'
 
 
 function NewsCards(props) {
 
     return (
         <div>
-            <a >
-                <img alt="" />
-                <h4 ></h4>
-                <p></p>
-            </a>
+            <img className={style.newsImage} src={props.news.imageURL} alt=""/>
+            <h4 >{props.news.title}</h4>
+            <p>{props.news.city} {props.news.country}  {props.news.date}</p>
         </div>
     )
 }

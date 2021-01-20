@@ -45,6 +45,7 @@ router.post('/newscreate', (req, res) => {
     title: req.body.title,
     imageURL: req.body.imageURL,
     country: req.body.country,
+    city: req.body.city,
     content: req.body.content,
     reference: req.body.reference,
     date:req.body.date
@@ -58,5 +59,15 @@ router.post('/newscreate', (req, res) => {
       res.send('news create failed: '  + err)
     })
 })
+
+
+router.get('/allnews', function (req, res, next) {
+    News.findAll().then(news => {
+      res.json(news)
+    })
+})
+
+
+
 
 module.exports = router;

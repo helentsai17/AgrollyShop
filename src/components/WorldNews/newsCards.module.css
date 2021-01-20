@@ -1,0 +1,14 @@
+.site{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 3%;
+    grid-gap: 1em;
+}
+
+.newsImage{
+    width:100%;
+    height: auto;
+    align-self: center;
+    border-radius: 10px;
+}
+

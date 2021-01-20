@@ -112,6 +112,11 @@ class navbar extends Component {
                             {t("home.1")}
                         </Link>
                     </li>
+                    <li>
+                        <Link to="/news" className="nav-link">
+                            {t("news.1")}
+                        </Link>
+                    </li>
 
                 </ul>
                 {localStorage.usertoken ? userLink : loginRegLink}
