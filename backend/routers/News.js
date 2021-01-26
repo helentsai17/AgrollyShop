@@ -67,6 +67,22 @@ router.get('/allnews', function (req, res, next) {
     })
 })
 
+router.get('/news/:id',function(req,res,next){
+  News.findOne({
+    where:{
+      news_id:req.params.id
+    }
+  }).then(news =>{
+    if(news){
+      res.json(news);
+    }else{
+      res.send('news dose not exits')
+    }
+
+  }).catch(err =>{
+    res.send('error: '+ err)
+  })
+})
 
 
 

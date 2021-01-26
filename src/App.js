@@ -32,6 +32,7 @@ import workWithUs from './components/aboutPage/WorkWithUs/workWithUs'
 import i18next from 'i18next';
 import news from './components/WorldNews/newsHomePage'
 import createnews from './components/WorldNews/inputNews'
+import newsTemplet from './components/WorldNews/newsTemplet'
 import feedback from './components/feedbackpage/feedbackpage'
 
 function App() {
@@ -86,6 +87,7 @@ function App() {
         <Route path="/croprisk/display" exact component={riskpage} />
 
         <Route path='/news' component={news}/>
+        <Route path='/happened/:id' component={newsTemplet}/>
         <Route path='/createNews' exact component={createnews}/>
         <Route path='/feedback' exact component={feedback}/>
 
