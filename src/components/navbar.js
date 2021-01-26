@@ -19,7 +19,6 @@ class navbar extends Component {
 
     render() {
     const { t } = this.props;
-
     const loginRegLink = (
 
         <ul className="navbar-nav">
