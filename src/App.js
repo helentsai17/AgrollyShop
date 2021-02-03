@@ -92,7 +92,7 @@ function App() {
         <Route path='/feedback' exact component={feedback}/>
 
         <Route path="/about/technology" exact component={technology} />
-        <Route path="/about/technology" exact component={technology} />
+       
       </Router>
     </div>
   );

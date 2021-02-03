@@ -1,0 +1,37 @@
+
+.FocaseSection{
+    background-color: #153B41;
+    padding:8% 10%;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    color: white;
+}
+
+.ForcaseImage{
+  text-align: center;
+}
+
+.featureContent{
+    padding: 5% 10% 0% 0%;
+    font-size: 25px;
+}
+
+
+.ForumSection{
+    padding:8% 10%;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    
+}
+
+.ForumImage{
+   text-align: center;
+}
+.RickSection{
+    padding:10%;
+    background-color: #153B41;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    color: white;
+}
+
