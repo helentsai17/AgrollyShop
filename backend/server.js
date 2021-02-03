@@ -13,6 +13,19 @@ app.use(
   })
 )
 
+app.enable('trust proxy');
+
+app.use (function (req, res, next) {
+  if (req.secure || process.env.BLUEMIX_REGION === undefined) {
+    next();
+  } else {
+    console.log('redirecting to https');
+    res.redirect('https://' + req.headers.host + req.url);
+  }
+});
+
+
+
 var Goods = require('./routers/Goods')
 var Feedback = require('./routers/Feedbacks')
 var News = require('./routers/News')

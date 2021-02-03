@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import style from './homepageOld.module.css';
 
-import phoneimage from '../../Image/phoneImage/phoneimg.png'
-
 import Footer from '../footer/footer'
 import Feature from './prefeature'
 import CountryButoon from './countrybutton'
+import HomepageWorldNews from './homepageWorldNews'
 import News from './agrollynews'
+
 import Partnerlogo from './partnerlogo';
 
 
@@ -45,7 +45,7 @@ export default class homePageOld extends Component {
 
                 <section className={style.homepagenews}>
                     <h3>World News</h3>
-                    <News/>
+                    <HomepageWorldNews/>
                     <h3>Agrolly News</h3>
                     <News/>
                 </section>

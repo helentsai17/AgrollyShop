@@ -1,18 +1,21 @@
 import React from 'react';
 import style from './newsTemplet.module.css'
-
+import { Link } from 'react-router-dom';
 
 
 function NewsPreview(props) {
 
     return (
         <div className={style.newsCard}>
-            <a href={props.link}>
-                <img className={style.newsImage} src={props.image} alt="" />
-                <h4 className={style.titleText}>{props.title}</h4>
-                <p>{props.city} {props.country} <small>{props.date}</small></p>
-            </a>
+            <div>
+                <Link className={style.editButton} to={"/happened/" + props.news.news_id}>
+                    <img className={style.newsImage} src={props.news.imageURL} alt="" />
+                    <h4 className={style.titleText}>{props.news.title}</h4>
+                    <p>{props.news.city} {props.news.country} <small>{props.news.date}</small></p>
+                </Link>
+            </div>
         </div>
+
     )
 }
 

@@ -3,14 +3,14 @@ import Card from './newsTemplet'
 import style from './newsTemplet.module.css'
 import axios from 'axios';
 
-export default class AgrollyNews extends Component {
+export default class HomepageWorldNews extends Component {
 
     constructor(props) {
         super(props);
         this.countrySearch = this.countrySearch.bind(this)
         this.state = { 
             news: [],
-            search:"Agrolly" 
+            search:"Agrolly"
         };
     }
 
@@ -35,7 +35,7 @@ export default class AgrollyNews extends Component {
         let filterCountry = this.state.news.filter(
             (countries) =>{
                 // console.log(countries.country.toLowerCase().includes(this.state.search.toLowerCase() != -1))
-                return countries.country.toLowerCase().includes(this.state.search.toLowerCase())
+                return countries.country.toLowerCase()!= (this.state.search.toLowerCase())
             }
         )
         return filterCountry.slice(0, 4).map(currentnews => {
